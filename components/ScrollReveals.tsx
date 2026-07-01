@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default function ScrollReveals() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const triggers: ScrollTrigger[] = [];
     const triggered = new WeakSet<Element>();

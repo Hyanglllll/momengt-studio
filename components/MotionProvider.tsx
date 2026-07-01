@@ -8,6 +8,10 @@ import Lenis from 'lenis';
 export default function MotionProvider() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    // Mobile browsers resize the viewport when the address bar hides/shows while
+    // scrolling; without this, ScrollTrigger treats that as a real resize and
+    // refreshes mid-scroll, snapping scrubbed animations and causing a visible flicker.
+    ScrollTrigger.config({ ignoreMobileResize: true });
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const lenis = new Lenis({

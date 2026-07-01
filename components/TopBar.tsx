@@ -18,8 +18,14 @@ export default function TopBar({
   const lastY = useRef(0);
 
   useEffect(() => {
-    function onScroll() {
-      const y = window.scrollY;
+    let ticking = false;
+    function update() {
+      ticking = false;
+      // Clamp out iOS/Android rubber-band overscroll, which can push scrollY
+      // negative or above the max scroll — left unclamped, that noise made the
+      // bar flicker in and out near the top and bottom on mobile.
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const y = Math.min(Math.max(window.scrollY, 0), Math.max(max, 0));
       setScrolled(y > 40);
       if (y < 60) {
         setHidden(false);
@@ -29,6 +35,11 @@ export default function TopBar({
         setHidden(false);
       }
       lastY.current = y;
+    }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
