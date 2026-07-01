@@ -50,7 +50,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="photo reveal" style={{ maxWidth: 680, height: 540, marginBottom: 48 }}>
+        <div className="photo reveal" style={{ maxWidth: 680, aspectRatio: '680 / 540', marginBottom: 48 }}>
           <img
             src="/assets/fxn-meadow-path.JPG"
             alt="A winding path through tall wild grasses and trees, shot on film — evoking MQ's journey from corporate life to Reiki practice"

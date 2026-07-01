@@ -59,7 +59,7 @@ export default function ReikiPage() {
           </p>
         </div>
 
-        <div className="photo reveal" style={{ maxWidth: 680, height: 420, marginBottom: 48 }}>
+        <div className="photo reveal" style={{ maxWidth: 680, aspectRatio: '680 / 420', marginBottom: 48 }}>
           <img
             src="/assets/fxn-pink-wildflowers.JPG"
             alt="Delicate pink wildflowers in full bloom, shot on film"

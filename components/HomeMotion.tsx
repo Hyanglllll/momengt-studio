@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default function HomeMotion() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scenes = Array.from(document.querySelectorAll<HTMLElement>('.home-scene'));
     const veil = document.getElementById('home-intro-veil');

@@ -124,26 +124,28 @@ export default function ServicesPage() {
           <p className="scene-body" style={{ marginBottom: 8 }}>
             {t('Bundles are for those ready to commit to their wellbeing over time.', '套餐适合愿意长期投入自我身心健康的你。')}
           </p>
-          <table className="bundles-table">
-            <thead>
-              <tr>
-                <th>{t('Package', '方案')}</th>
-                <th>{t('Price', '价格')}</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {BUNDLES.map((b) => (
-                <tr key={b.en}>
-                  <td>{lang === 'zh' ? b.zh : b.en}</td>
-                  <td className="price">${b.price} CAD</td>
-                  <td>
-                    <Link href="/booking" className="proj-link">{t('Book', '预约')}</Link>
-                  </td>
+          <div style={{ overflowX: 'auto' }}>
+            <table className="bundles-table">
+              <thead>
+                <tr>
+                  <th>{t('Package', '方案')}</th>
+                  <th>{t('Price', '价格')}</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {BUNDLES.map((b) => (
+                  <tr key={b.en}>
+                    <td>{lang === 'zh' ? b.zh : b.en}</td>
+                    <td className="price">${b.price} CAD</td>
+                    <td>
+                      <Link href="/booking" className="proj-link">{t('Book', '预约')}</Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div style={{ marginTop: 20 }}>
             <Link href="/contact" className="btn btn-sage">{t('Ask about bundles', '咨询套餐')}</Link>
           </div>

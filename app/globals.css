@@ -273,7 +273,7 @@ footer {
 .home-intro-veil.gone { opacity: 0; }
 
 .home-scene {
-  min-height: 100vh; display: flex; align-items: center;
+  min-height: 100vh; min-height: 100svh; display: flex; align-items: center;
   position: relative; padding: 84px 88px 68px; overflow: hidden; will-change: opacity;
 }
 
@@ -534,6 +534,20 @@ footer {
 .section-rule { width: 36px; height: 1px; background: var(--terra); opacity: 0.5; margin: 18px 0; }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .home-scene.scene-photo {
+    flex-direction: column; justify-content: center; align-items: stretch;
+    padding: 96px 24px 64px;
+  }
+  .scene-panel {
+    /* stays `relative` (not `static`) so .scene-bg's absolute+inset:0 still
+       fills just this box instead of escaping to the full-height .home-scene */
+    position: relative; width: 100%; max-width: 420px; height: 42vh; max-height: 340px;
+    right: auto; top: auto; transform: none; margin: 0 auto 32px;
+  }
+  .scene-inner { margin-left: 0; }
+}
+
 @media (max-width: 640px) {
   .top-bar { padding: 0 20px; }
   .inner-wrap { padding: 44px 22px 56px; }
@@ -541,4 +555,8 @@ footer {
   .nav-overlay-inner { padding: 0 28px; gap: 0; }
   .nav-preview { display: none; }
   .home-scene { padding: 60px 24px; }
+}
+
+@media (max-width: 420px) {
+  .support-grid { grid-template-columns: 1fr; }
 }
