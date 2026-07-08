@@ -58,23 +58,21 @@ export default function FaqPage() {
           {t('Back', '返回')}
         </Link>
 
-        <div className="reveal">
-          <p className="eyebrow">{t('Common Questions', '常见问题')}</p>
-          <h1 className="page-h1">{t('Things you might wonder', '你或许会好奇的事')}</h1>
-          <p className="page-lead">
-            {t(
-              "If you have a question that isn't answered here, please reach out. There are no wrong questions, only curious ones.",
-              '如果这里没有解答你的疑问，欢迎与我联系。没有错误的问题，只有好奇的心。'
-            )}
-          </p>
-        </div>
+        <p className="eyebrow">{t('Common Questions', '常见问题')}</p>
+        <h1 className="page-h1" tabIndex={-1}>{t('Things you might wonder', '你或许会好奇的事')}</h1>
+        <p className="page-lead" style={{ textAlign: 'left' }}>
+          {t(
+            "If you have a question that isn't answered here, please reach out. There are no wrong questions, only curious ones.",
+            '如果这里没有解答你的疑问，欢迎与我联系。没有错误的问题，只有好奇的心。'
+          )}
+        </p>
 
-        <div className="faq-list reveal">
+        <div className="faq-list" role="list">
           {FAQ_DATA.map((item, i) => {
             const isOpen = openIndex === i;
             const [q, a] = lang === 'zh' ? item.zh : item.en;
             return (
-              <div className={`faq-item${isOpen ? ' open' : ''}`} key={item.en[0]}>
+              <div className={`faq-item${isOpen ? ' open' : ''}`} key={item.en[0]} role="listitem">
                 <button
                   type="button"
                   className="faq-q"
@@ -87,15 +85,17 @@ export default function FaqPage() {
                   <span className="faq-icon" aria-hidden="true">+</span>
                 </button>
                 <div className="faq-ans" id={`faq-ans-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
-                  <div className="faq-ans-inner">{a}</div>
+                  {a}
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="reveal" style={{ textAlign: 'center', marginTop: 56, marginBottom: 24 }}>
-          <p className="page-lead" style={{ margin: '0 auto 20px' }}>{t('Still curious?', '还想了解更多？')}</p>
+        <div style={{ marginTop: 52 }}>
+          <p style={{ fontFamily: "'Abel', sans-serif", fontSize: 13, color: 'var(--muted)', marginBottom: 14, letterSpacing: '0.04em' }}>
+            {t('Still curious?', '还想了解更多？')}
+          </p>
           <Link href="/contact" className="btn btn-terra">{t('Ask Meng Directly', '直接询问 Meng')}</Link>
         </div>
       </div>

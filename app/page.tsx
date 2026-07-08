@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Scene from '@/components/Scene';
 import HomeMotion from '@/components/HomeMotion';
+import SceneDots from '@/components/SceneDots';
 import { useI18n } from '@/lib/i18n';
 
 const SCENES = [
@@ -67,17 +67,6 @@ const SCENES = [
   },
   {
     num: '06',
-    side: { en: 'Reach Out', zh: '联系方式' },
-    title: { en: 'Contact', zh: '联系' },
-    desc: {
-      en: 'Curious about Reiki, unsure which session suits you, or simply wanting to say hello — there are no wrong questions. Send a note and Meng will respond within 48 hours.',
-      zh: '开始之前有疑问？联系我——我会在 48 小时内回复。',
-    },
-    href: '/contact',
-    kind: 'dark',
-  },
-  {
-    num: '07',
     side: { en: 'A Gift', zh: '一份礼物' },
     title: { en: 'Gift Certificates', zh: '礼品卡' },
     desc: {
@@ -88,6 +77,17 @@ const SCENES = [
     photo: '/assets/fxn-pink-wildflowers.JPG',
     kind: 'photo',
   },
+  {
+    num: '07',
+    side: { en: 'Reach Out', zh: '联系方式' },
+    title: { en: 'Contact', zh: '联系' },
+    desc: {
+      en: 'Curious about Reiki, unsure which session suits you, or simply wanting to say hello — there are no wrong questions. Send a note and Meng will respond within 48 hours.',
+      zh: '开始之前有疑问？联系我——我会在 48 小时内回复。',
+    },
+    href: '/contact',
+    kind: 'dark',
+  },
 ];
 
 export default function HomePage() {
@@ -96,17 +96,21 @@ export default function HomePage() {
   return (
     <>
       <HomeMotion />
-      <div className="home-intro-veil" id="home-intro-veil" aria-hidden="true" />
-      <div className="hero-atmos" aria-hidden="true" />
+      <div className="home-atmos" aria-hidden="true" />
+      <div className="home-intro" id="home-intro" aria-hidden="true" />
+      <SceneDots />
 
-      <Scene className="hero-scene">
-        <h1 className="hero-headline" style={{ fontFamily: "'Playfair Display', var(--display)" }}>
-          {lang === 'zh' ? (
-            <>此刻复此刻，<br />由内而愈。</>
-          ) : (
-            <>Moment by moment,<br />heal from within.</>
-          )}
-        </h1>
+      {/* Act I — hero, headline lower-left */}
+      <div className="home-scene hero-scene">
+        <div className="home-hero">
+          <p className="home-headline" style={{ fontFamily: "'Playfair Display'" }}>
+            {lang === 'zh' ? (
+              <>此刻复此刻，<br />由内而愈。</>
+            ) : (
+              <>Moment by moment,<br />heal from within.</>
+            )}
+          </p>
+        </div>
         <button
           type="button"
           className="scroll-cue"
@@ -114,11 +118,13 @@ export default function HomePage() {
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
         >
           <span>{lang === 'zh' ? '滚动' : 'Scroll'}</span>
+          <i />
         </button>
-      </Scene>
+      </div>
 
+      {/* One scroll-scene per menu item */}
       {SCENES.map((s) => (
-        <Scene key={s.num} className={s.kind === 'photo' ? 'scene-photo' : 'scene-dark'}>
+        <div key={s.num} className={`home-scene ${s.kind === 'photo' ? 'scene-photo' : 'scene-dark'}`}>
           {s.kind === 'photo' && (
             <div className="scene-panel">
               <div className="scene-bg" style={{ backgroundImage: `url('${s.photo}')` }} />
@@ -133,7 +139,7 @@ export default function HomePage() {
               {lang === 'zh' ? '查看' : 'Enter'}
             </Link>
           </div>
-        </Scene>
+        </div>
       ))}
     </>
   );

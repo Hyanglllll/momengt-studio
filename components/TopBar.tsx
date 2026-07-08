@@ -13,7 +13,6 @@ export default function TopBar({
   onMenuToggle: () => void;
 }) {
   const { lang, setLang, t } = useI18n();
-  const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
 
@@ -26,7 +25,6 @@ export default function TopBar({
       // bar flicker in and out near the top and bottom on mobile.
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const y = Math.min(Math.max(window.scrollY, 0), Math.max(max, 0));
-      setScrolled(y > 40);
       if (y < 60) {
         setHidden(false);
       } else if (y > lastY.current + 6) {
@@ -46,46 +44,50 @@ export default function TopBar({
   }, []);
 
   return (
-    <header className={`top-bar ${scrolled ? 'scrolled' : ''} ${hidden && !isMenuOpen ? 'bar-hidden' : ''}`}>
-      <Link href="/" className="logo-link" aria-label="moMENGt Studio — home">
-        <Logo size={30} />
-        <span className="logo-wordmark">
-          mo<span className="meng">MENG</span>t
-        </span>
+    <header className={`top-bar ${hidden && !isMenuOpen ? 'bar-hidden' : ''}`} role="banner">
+      <Link href="/" className="logo-link" aria-label="moMENGt — Return to home">
+        <Logo size={34} />
       </Link>
-      <div className="top-bar-right">
-        <div role="group" aria-label="Language">
-          <button
-            type="button"
-            className={`lang-toggle ${lang === 'en' ? 'active' : ''}`}
-            aria-pressed={lang === 'en'}
-            onClick={() => setLang('en')}
-          >
-            EN
-          </button>
-          <span className="lang-sep">/</span>
-          <button
-            type="button"
-            className={`lang-toggle ${lang === 'zh' ? 'active' : ''}`}
-            aria-pressed={lang === 'zh'}
-            onClick={() => setLang('zh')}
-          >
-            中文
-          </button>
-        </div>
+      <div className="top-center" role="group" aria-label="Language">
+        <button
+          type="button"
+          className={`lang-toggle ${lang === 'en' ? 'active' : ''}`}
+          aria-pressed={lang === 'en'}
+          aria-label="Switch to English"
+          onClick={() => setLang('en')}
+        >
+          EN
+        </button>
+        <span className="lang-sep" aria-hidden="true" />
+        <button
+          type="button"
+          className={`lang-toggle ${lang === 'zh' ? 'active' : ''}`}
+          aria-pressed={lang === 'zh'}
+          aria-label="切换到中文 / Switch to Chinese"
+          onClick={() => setLang('zh')}
+        >
+          中文
+        </button>
+      </div>
+      <div className="top-right">
+        <Link href="/booking" className="top-book">
+          {t('Book a session', '预约')}
+        </Link>
         <button
           type="button"
           className="menu-trigger"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isMenuOpen}
           aria-controls="nav-overlay"
           onClick={onMenuToggle}
         >
-          <span className="dot-grid" aria-hidden="true">
-            {Array.from({ length: 9 }).map((_, i) => (
-              <span key={i} />
-            ))}
-          </span>
           <span>{t('Menu', '菜单')}</span>
+          <span className="menu-dots" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </span>
         </button>
       </div>
     </header>

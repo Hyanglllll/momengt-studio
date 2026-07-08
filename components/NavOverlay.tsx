@@ -8,10 +8,10 @@ const LINKS = [
   { href: '/reiki', idx: '01', en: 'What is Reiki', zh: '什么是灵气', img: '/assets/fxn-pink-wildflowers.JPG' },
   { href: '/about', idx: '02', en: 'About', zh: '关于', img: '/assets/fxn-meadow-path.JPG' },
   { href: '/services', idx: '03', en: 'Services', zh: '服务', img: '/assets/fxn-green-berries.JPG' },
-  { href: '/faq', idx: '04', en: 'FAQ', zh: '常见问题', img: '/assets/fxn-pink-wildflowers.JPG' },
+  { href: '/faq', idx: '04', en: 'FAQ', zh: '常见问题', img: '/assets/fxn-meadow-path.JPG' },
   { href: '/booking', idx: '05', en: 'Booking', zh: '预约', img: '/assets/fqs-stone-texture.JPG' },
-  { href: '/contact', idx: '06', en: 'Contact', zh: '联系', img: '/assets/fxn-meadow-path.JPG' },
-  { href: '/gift', idx: '07', en: 'Gift Certificates', zh: '礼品卡', img: '/assets/fqs-stone-texture.JPG' },
+  { href: '/gift', idx: '06', en: 'Gift Certificates', zh: '礼品卡', img: '/assets/fxn-pink-wildflowers.JPG' },
+  { href: '/contact', idx: '07', en: 'Contact', zh: '联系', img: '/assets/fxn-green-berries.JPG' },
 ];
 
 export default function NavOverlay({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -66,38 +66,30 @@ export default function NavOverlay({ isOpen, onClose }: { isOpen: boolean; onClo
       role="dialog"
       aria-modal="true"
       aria-hidden={!isOpen}
-      aria-label="Site navigation"
+      aria-label="Main navigation"
     >
-      <button type="button" className="nav-close" onClick={onClose} aria-label="Close menu" tabIndex={isOpen ? 0 : -1}>
-        {lang === 'zh' ? '关闭 ✕' : 'Close ✕'}
-      </button>
-      <div className="nav-overlay-inner">
-        <div
-          className={`nav-preview ${previewImg ? 'show' : ''}`}
-          style={previewImg ? { backgroundImage: `url('${previewImg}')` } : undefined}
-          aria-hidden="true"
-        />
-        <nav aria-label="Pages">
-          <ul className="nav-links">
-            {LINKS.map((link, i) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  ref={i === 0 ? firstLinkRef : undefined}
-                  onMouseEnter={() => setPreviewImg(link.img)}
-                  onMouseLeave={() => setPreviewImg(null)}
-                  onFocus={() => setPreviewImg(link.img)}
-                  onClick={onClose}
-                  tabIndex={isOpen ? 0 : -1}
-                  data-idx={link.idx}
-                >
-                  {lang === 'zh' ? link.zh : link.en}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        {LINKS.map((link, i) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            ref={i === 0 ? firstLinkRef : undefined}
+            onMouseEnter={() => setPreviewImg(link.img)}
+            onMouseLeave={() => setPreviewImg(null)}
+            onFocus={() => setPreviewImg(link.img)}
+            onClick={onClose}
+            tabIndex={isOpen ? 0 : -1}
+            data-idx={link.idx}
+          >
+            {lang === 'zh' ? link.zh : link.en}
+          </Link>
+        ))}
+      </nav>
+      <div
+        className={`nav-preview ${previewImg ? 'show' : ''}`}
+        style={previewImg ? { backgroundImage: `url('${previewImg}')` } : undefined}
+        aria-hidden="true"
+      />
     </div>
   );
 }

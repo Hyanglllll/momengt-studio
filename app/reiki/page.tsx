@@ -45,7 +45,7 @@ export default function ReikiPage() {
           {t('Back', '返回')}
         </Link>
 
-        <div className="intro-centered reveal">
+        <div className="intro-centered">
           <Seal />
           <p className="eyebrow">{t('Ancient Wisdom', '古老智慧')}</p>
           <h1 className="page-h1" tabIndex={-1}>
@@ -59,7 +59,7 @@ export default function ReikiPage() {
           </p>
         </div>
 
-        <div className="photo reveal" style={{ maxWidth: 680, aspectRatio: '680 / 420', marginBottom: 48 }}>
+        <div className="photo" style={{ maxWidth: 680, width: '100%', aspectRatio: '680 / 420', marginBottom: 48 }}>
           <img
             src="/assets/fxn-pink-wildflowers.JPG"
             alt="Delicate pink wildflowers in full bloom, shot on film"
@@ -67,7 +67,7 @@ export default function ReikiPage() {
           />
         </div>
 
-        <div className="prose reveal" style={{ maxWidth: 640, textAlign: 'left' }}>
+        <div style={{ maxWidth: 640, textAlign: 'left', fontSize: 15, lineHeight: 1.82, color: 'rgba(239,233,221,0.72)' }}>
           <p>
             {lang === 'zh' ? (
               <>
@@ -82,20 +82,22 @@ export default function ReikiPage() {
               </>
             )}
           </p>
-          <p>
+          <p style={{ marginTop: 16 }}>
             {t(
               "A Reiki practitioner acts as a conduit for this universal energy, placing hands gently on or near the body to encourage energy to flow freely. When energy moves without obstruction, the body's own capacity for healing is restored.",
               '灵气疗愈师如同这股宇宙能量的通道，将双手轻放于身体之上或附近，引导能量自由流动。当能量不受阻碍地流动时，身体自身的疗愈力便得以恢复。'
             )}
           </p>
-          <p>
+          <p style={{ marginTop: 16 }}>
             {t(
               'Sessions are quiet and fully clothed. Everyone experiences Reiki differently — some feel warmth or a gentle tingling, others a deep sense of calm. There is no single right response. You only need to arrive and rest.',
               '疗程安静、无需更衣。每个人对灵气的感受都不同——有人感到温暖或轻微的酥麻，有人则是深深的平静。没有唯一正确的反应。你只需到来，然后休息。'
             )}
           </p>
 
-          <h2>{t('Reiki and Qi — Two traditions, one truth', '灵气与气——两种传统，同一真理')}</h2>
+          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', margin: '44px 0 16px', color: 'var(--ink)' }}>
+            {t('Reiki and Qi — Two traditions, one truth', '灵气与气——两种传统，同一真理')}
+          </h2>
           <p>
             {lang === 'zh' ? (
               <>
@@ -109,38 +111,45 @@ export default function ReikiPage() {
               </>
             )}
           </p>
-          <p>
+          <p style={{ marginTop: 16 }}>
             {t(
               'Both traditions recognize that the body is more than physical. It carries energy. And when that energy stagnates, becomes blocked, or falls out of balance, we feel it — as pain, fatigue, anxiety, or a quiet sense of disconnection.',
               '两种传统都认识到，身体不只是物质。它承载着能量。当能量停滞、阻塞或失衡时，我们会感受到它——化作疼痛、疲惫、焦虑，或一种隐隐的疏离感。'
             )}
           </p>
-          <p>
+          <p style={{ marginTop: 16 }}>
             {t(
               "Where Qi describes the energy that flows within the body and the natural world, Reiki works by channeling universal energy through a practitioner to support the body's own healing. Different traditions, pointing toward the same truth.",
               '「气」描述的是流动于身体与自然之中的能量，而灵气则透过疗愈师引导宇宙能量，支持身体自身的疗愈。不同的传统，指向同一个真理。'
             )}
           </p>
+        </div>
 
-          <h2>{t('What Reiki can support', '灵气能带来的支持')}</h2>
-          <p>
+        <div style={{ maxWidth: 640, width: '100%', textAlign: 'left', marginTop: 48 }}>
+          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20, color: 'var(--ink)' }}>
+            {t('What Reiki can support', '灵气能带来的支持')}
+          </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(239,233,221,0.72)', marginBottom: 24 }}>
             {t(
               "Reiki is a complementary practice — it works alongside medical care, never in place of it. It doesn't claim to cure. What it does, gently and consistently, is help the body settle into the state where its own healing can begin. Clients most often come to me carrying one of these:",
               '灵气是一种辅助性的练习——它与医疗照护并行，绝不取而代之。它不声称治愈疾病。它温和而持续地做的，是帮助身体回到那个能够开始自我疗愈的状态。来访者最常带着以下其中一种困扰前来：'
             )}
           </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px 32px' }}>
+            {SUPPORT.map((item) => (
+              <div key={item.en[0]} style={{ borderTop: '1px solid var(--sand)', paddingTop: 12 }}>
+                <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 4, color: 'var(--ink)' }}>
+                  {lang === 'zh' ? item.zh[0] : item.en[0]}
+                </p>
+                <p style={{ fontSize: 13, color: 'rgba(239,233,221,0.6)', lineHeight: 1.6 }}>
+                  {lang === 'zh' ? item.zh[1] : item.en[1]}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="support-grid reveal" style={{ maxWidth: 880 }}>
-          {SUPPORT.map((item) => (
-            <div className="support-item" key={item.en[0]}>
-              <p className="support-title">{lang === 'zh' ? item.zh[0] : item.en[0]}</p>
-              <p className="support-desc">{lang === 'zh' ? item.zh[1] : item.en[1]}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="cta-row reveal" style={{ marginTop: 56, marginBottom: 32, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ marginTop: 48, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <Link href="/services" className="btn btn-sage">
             {t('Explore sessions', '探索疗程')}
           </Link>

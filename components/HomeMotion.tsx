@@ -10,19 +10,18 @@ export default function HomeMotion() {
     ScrollTrigger.config({ ignoreMobileResize: true });
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scenes = Array.from(document.querySelectorAll<HTMLElement>('.home-scene'));
-    const veil = document.getElementById('home-intro-veil');
-    const atmos = document.querySelector('.hero-atmos');
-    const hl = document.querySelector('.hero-headline');
-    const sub = document.querySelector('.hero-sub');
-    const cta = document.querySelector('.hero-cta');
+    const intro = document.getElementById('home-intro');
+    const atmos = document.querySelector('.home-atmos');
+    const hl = document.querySelector('.home-headline');
 
     if (reduced) {
-      scenes.forEach((s) => s.classList.add('in-view'));
-      veil?.classList.add('gone');
+      scenes.forEach((s) => {
+        s.classList.add('in-view');
+        s.style.opacity = '1';
+      });
+      intro?.classList.add('gone');
       atmos?.classList.add('revealed');
       hl?.classList.add('in');
-      sub?.classList.add('in');
-      cta?.classList.add('in');
       return;
     }
 
@@ -35,6 +34,7 @@ export default function HomeMotion() {
       })
     );
 
+    // Film dissolve — neighbours fade to 70% entering/leaving viewport centre
     const tweens = scenes.flatMap((s) => [
       gsap.fromTo(
         s,
@@ -57,14 +57,16 @@ export default function HomeMotion() {
       ),
     ]);
 
+    // first scene visible immediately
+    scenes[0]?.classList.add('in-view');
+
     ScrollTrigger.refresh();
 
+    // Black intro veil: atmos fades in, veil lifts, headline eases up
     const timers = [
       setTimeout(() => atmos?.classList.add('revealed'), 60),
-      setTimeout(() => veil?.classList.add('gone'), 700),
+      setTimeout(() => intro?.classList.add('gone'), 700),
       setTimeout(() => hl?.classList.add('in'), 700),
-      setTimeout(() => sub?.classList.add('in'), 1000),
-      setTimeout(() => cta?.classList.add('in'), 1350),
     ];
 
     return () => {
