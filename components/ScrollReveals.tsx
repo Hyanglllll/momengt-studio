@@ -1,67 +1,22 @@
 'use client';
 
 import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Design behaviour: when a page becomes visible, every direct child of its
+// .inner-wrap fades up in a slow stagger (80ms lead-in, 85ms per item).
 export default function ScrollReveals() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.config({ ignoreMobileResize: true });
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const triggers: ScrollTrigger[] = [];
-    const triggered = new WeakSet<Element>();
-    const revealed = new WeakSet<Element>();
-
-    // React can reuse a DOM node across two differently-keyed conditional
-    // renders (same tag, same position) and overwrite its className whole —
-    // wiping the 'in' class we add imperatively. So on every scan we both
-    // pick up brand-new .reveal nodes AND restore 'in' on ones that already
-    // crossed the threshold but lost the class to a className overwrite.
-    const scan = () => {
-      document.querySelectorAll<HTMLElement>('.reveal').forEach((el) => {
-        if (revealed.has(el)) {
-          if (!el.classList.contains('in')) el.classList.add('in');
-          return;
-        }
-        if (triggered.has(el)) return;
-        triggered.add(el);
-        if (reduced) {
-          el.classList.add('in');
-          revealed.add(el);
-          return;
-        }
-        triggers.push(
-          ScrollTrigger.create({
-            trigger: el,
-            start: 'top 80%',
-            once: true,
-            onEnter: () => {
-              el.classList.add('in');
-              revealed.add(el);
-            },
-          })
-        );
-      });
-    };
-
-    scan();
-    if (!reduced) ScrollTrigger.refresh();
-
-    const mo = new MutationObserver(() => {
-      scan();
-      if (!reduced) requestAnimationFrame(() => ScrollTrigger.refresh());
+    const wrap = document.querySelector('.inner-wrap');
+    if (!wrap) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const items = Array.from(wrap.children) as HTMLElement[];
+    const timers = items.map((el, i) => {
+      el.classList.add('fade-up');
+      return setTimeout(() => el.classList.add('in'), 80 + i * 85);
     });
-    mo.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
     return () => {
-      mo.disconnect();
-      triggers.forEach((t) => t.kill());
+      timers.forEach(clearTimeout);
+      items.forEach((el) => el.classList.remove('fade-up', 'in'));
     };
   }, []);
 

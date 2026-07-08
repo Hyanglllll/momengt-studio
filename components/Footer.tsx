@@ -26,11 +26,11 @@ export default function Footer() {
 
   return (
     <footer role="contentinfo">
-      <p className="footer-copy">
-        © {year ?? ''} · USUI REIKI · TORONTO
-      </p>
-      <div className="footer-clock" aria-hidden="true">
-        Toronto<b>{time}</b>
+      <p className="footer-copy">© {year ?? ''} · USUI REIKI · TORONTO</p>
+      <div className="footer-clocks" aria-hidden="true">
+        <span>
+          Toronto<b>{time}</b>
+        </span>
       </div>
       <p className="footer-tag">{t('Return to the moment.', '回到当下。')}</p>
     </footer>

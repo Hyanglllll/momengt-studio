@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function AmbientBackground({ photo }: { photo?: string }) {
+export default function AmbientBackground() {
   const boxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,16 +24,5 @@ export default function AmbientBackground({ photo }: { photo?: string }) {
     return () => nodes.forEach((n) => n.remove());
   }, []);
 
-  return (
-    <div className="ambient-bg" aria-hidden="true">
-      {photo && (
-        <div
-          className="ambient-photo revealed"
-          style={{ backgroundImage: `url('${photo}')` }}
-        />
-      )}
-      <div className="fog-layer" />
-      <div ref={boxRef} />
-    </div>
-  );
+  return <div ref={boxRef} className="ambient-bg" aria-hidden="true" />;
 }

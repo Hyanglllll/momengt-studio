@@ -7,7 +7,7 @@ import AmbientBackground from '@/components/AmbientBackground';
 import MotionProvider from '@/components/MotionProvider';
 
 export const metadata: Metadata = {
-  title: 'moMENGt Studio — Usui Reiki, Toronto',
+  title: 'moMENGt — Usui Reiki · Toronto',
   description:
     'Moment by moment, heal from within. Usui Reiki sessions, training, and gift certificates in Toronto and worldwide via virtual sessions.',
 };
