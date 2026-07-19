@@ -24,7 +24,7 @@ const CREDENTIALS = [
   },
 ];
 
-const P_STYLE = { fontSize: 15, lineHeight: 1.82, color: 'rgba(239,233,221,0.68)', maxWidth: 460 } as const;
+const P_STYLE = { fontSize: 15, lineHeight: 1.82, color: 'rgba(42,37,32,0.68)', maxWidth: 460 } as const;
 
 export default function AboutPage() {
   const { lang, t } = useI18n();
@@ -55,8 +55,8 @@ export default function AboutPage() {
         <div className="about-grid">
           <div className="photo" style={{ aspectRatio: '3 / 4', maxHeight: 540 }}>
             <img
-              src="/assets/fxn-meadow-path.JPG"
-              alt="A winding path through tall wild grasses and trees, shot on film — evoking MQ's journey from corporate life to Reiki practice"
+              src="/assets/white-orchid.jpg"
+              alt="A white orchid in bloom against a quiet wall"
               loading="lazy"
             />
           </div>
@@ -66,24 +66,30 @@ export default function AboutPage() {
               {t('A breakthrough between migraines', '偏头痛之间的转机')}
             </h2>
             <p style={P_STYLE}>
-              {t('In 2020, I started having migraines for grinding my teeth in sleep.', '2020 年，我因睡眠中磨牙开始出现偏头痛。')}
+              {t('In 2020, I started having migraines from grinding my teeth in my sleep.', '2020年，我开始因为睡梦中磨牙而偏头痛。')}
             </p>
             <p style={{ ...P_STYLE, marginTop: 16 }}>
               {t(
-                'Working a demanding corporate job in Toronto, stress had quietly accumulated in my body — tightening my jaw so severely that on bad days, I could only eat soft food. My dentist recommended Botox injections. They helped, for a while. But numbing the pain wasn\'t the same as healing it.',
-                '在多伦多做着一份高压的企业工作，压力悄然在身体里累积——让我的下颌紧绷到状态差的日子里只能吃软食。牙医建议我打肉毒杆菌。它确实缓解了一阵子。但麻痹疼痛，并不等于疗愈它。'
+                'I was working a demanding corporate job in Toronto, and stress had quietly accumulated in my body — tightening my jaw so severely that on bad days I could only eat soft food. My dentist recommended Botox injections. They helped, for a while. But numbing the pain wasn\'t the same as understanding it.',
+                '尽管我觉得自己年轻，身体状况良好，工作和生活的压力在我身体里悄悄累积。下颌肌肉严重紧张的时候，我只能咀嚼软的食物。牙医建议我打肉毒杆菌，确实管用了一阵子。但麻痹疼痛，和真正理解它，是两回事。'
               )}
             </p>
             <p style={{ ...P_STYLE, marginTop: 16 }}>
               {t(
-                'The turning point came during a migraine that had persisted, on and off, for over a week. Frustrated, I was trying anything I could. It was during this search that I received Reiki for the first time — without fully knowing what it was. What I felt surprised me. The tension softened. A quiet wave of calm moved through my body.',
-                '转折发生在一次断断续续持续了一周多的偏头痛中。我很沮丧，几乎什么方法都愿意尝试。正是在这样的寻找中，我第一次接受了灵气——当时我甚至还不完全明白那是什么。我的感受让我惊讶。紧绷松开了。一股安静的平静流过我的身体。'
+                'The turning point came during a migraine that had persisted, on and off, for over a week. Frustrated, I was willing to try almost anything. That was when I received Reiki for the first time — without fully knowing what it was. What I felt surprised me: the tension softened, and a quiet wave of calm moved through my body.',
+                '转折发生在一次断断续续持续了一周多的偏头痛里。我第一次接受了灵气疗愈——尽管过程中我根本对它一无所知。令我意外的是，我紧绷的神经似乎开始松动。'
               )}
             </p>
             <p style={{ ...P_STYLE, marginTop: 16 }}>
               {t(
-                'I went home and started researching. Then I started training. Eventually, I earned my Usui Reiki Master certificate. I began practicing on friends and family, and their experiences mirrored my own. Watching Reiki become part of their healing — not just mine — is what moved me to open MoMengt Studio.',
-                '我回到家开始研究，然后开始学习。最终，我取得了臼井灵气导师（Usui Reiki Master）认证。我开始为亲友施作灵气，他们的感受与我如出一辙。看着灵气成为他们疗愈的一部分——而不只是我的——正是这份感动让我开设了 MoMengt Studio。'
+                'I went home and started reading. Then I started training. Eventually, I earned my Usui Reiki Master certificate. I began practicing on friends and family, and what they described often mirrored my own experience. Watching Reiki become part of how they cared for themselves — not just how I cared for myself — is what moved me to open MoMengt Studio.',
+                '回家后我开始查资料，然后开始学习，最终取得了臼井灵气师（Usui Reiki Master）认证。最初我只打算通过灵气帮助身边亲友，但随着时间推移，越来越多对此抱有好奇的人找到我，于是我决定开设 MoMengt Studio。'
+              )}
+            </p>
+            <p style={{ ...P_STYLE, marginTop: 16 }}>
+              {t(
+                'This is my story, not a promise of yours. Every body arrives differently, and every body responds in its own time. My work is simply to hold the space.',
+                '这是我的故事，而不是对你的承诺。每个身体到来的状态不同，回应的节奏也不同。我的工作，只是守护这个空间。'
               )}
             </p>
 
@@ -97,7 +103,7 @@ export default function AboutPage() {
                     <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 3, color: 'var(--ink)' }}>
                       {lang === 'zh' ? c.zh[0] : c.en[0]}
                     </p>
-                    <p style={{ fontSize: 13, lineHeight: 1.6, color: 'rgba(239,233,221,0.6)' }}>
+                    <p style={{ fontSize: 13, lineHeight: 1.6, color: 'rgba(42,37,32,0.6)' }}>
                       {lang === 'zh' ? c.zh[1] : c.en[1]}
                     </p>
                   </div>

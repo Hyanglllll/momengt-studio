@@ -6,7 +6,7 @@ export default function Seal() {
         cx="20"
         cy="20"
         r="14.5"
-        stroke="#a4d16a"
+        stroke="#61863d"
         strokeWidth="1.6"
         fill="none"
         strokeLinecap="round"

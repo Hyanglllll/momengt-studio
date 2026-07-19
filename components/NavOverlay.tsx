@@ -5,13 +5,13 @@ import Link from 'next/link';
 import { useI18n } from '@/lib/i18n';
 
 const LINKS = [
-  { href: '/reiki', idx: '01', en: 'What is Reiki', zh: '什么是灵气', img: '/assets/fxn-pink-wildflowers.JPG' },
-  { href: '/about', idx: '02', en: 'About', zh: '关于', img: '/assets/fxn-meadow-path.JPG' },
-  { href: '/services', idx: '03', en: 'Services', zh: '服务', img: '/assets/fxn-green-berries.JPG' },
-  { href: '/faq', idx: '04', en: 'FAQ', zh: '常见问题', img: '/assets/fxn-meadow-path.JPG' },
-  { href: '/booking', idx: '05', en: 'Booking', zh: '预约', img: '/assets/fqs-stone-texture.JPG' },
-  { href: '/gift', idx: '06', en: 'Gift Certificates', zh: '礼品卡', img: '/assets/fxn-pink-wildflowers.JPG' },
-  { href: '/contact', idx: '07', en: 'Contact', zh: '联系', img: '/assets/fxn-green-berries.JPG' },
+  { href: '/reiki', idx: '01', en: 'What is Reiki', zh: '什么是灵气', img: '/assets/scene-reiki.jpg' },
+  { href: '/about', idx: '02', en: 'About', zh: '关于', img: '/assets/white-orchid.jpg' },
+  { href: '/services', idx: '03', en: 'Services', zh: '服务', img: '/assets/palo-santo.jpg' },
+  { href: '/faq', idx: '04', en: 'FAQ', zh: '常见问题', img: '/assets/stones-circle.jpg' },
+  { href: '/booking', idx: '05', en: 'Booking', zh: '预约', img: '/assets/scene-booking.jpg' },
+  { href: '/gift', idx: '06', en: 'Gift Certificates', zh: '礼品卡', img: '/assets/scene-gift.jpg' },
+  { href: '/contact', idx: '07', en: 'Contact', zh: '联系', img: '/assets/amethyst-pendulum.jpg' },
 ];
 
 export default function NavOverlay({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {

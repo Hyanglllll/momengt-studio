@@ -42,7 +42,7 @@ export default function HomeMotion() {
         {
           opacity: 1,
           ease: 'none',
-          scrollTrigger: { trigger: s, start: 'top bottom', end: 'top center', scrub: true },
+          scrollTrigger: { trigger: s, start: 'top bottom', end: 'top center', scrub: 0.6 },
         }
       ),
       gsap.fromTo(
@@ -52,7 +52,7 @@ export default function HomeMotion() {
           opacity: 0.7,
           ease: 'none',
           immediateRender: false,
-          scrollTrigger: { trigger: s, start: 'bottom center', end: 'bottom top', scrub: true },
+          scrollTrigger: { trigger: s, start: 'bottom center', end: 'bottom top', scrub: 0.6 },
         }
       ),
     ]);
