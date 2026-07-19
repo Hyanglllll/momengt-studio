@@ -8,7 +8,7 @@ import { useI18n } from '@/lib/i18n';
 
 const SUBJECT_OPTIONS: [string, string][] = [
   ['In-Person Session', '面对面疗程'],
-  ['Virtual Session', '线上疗程'],
+  ['Distance Session', '远程疗程'],
   ['Session Bundles', '套餐疗程'],
   ['Gift Certificates', '礼品卡'],
   ['Reiki Training (Level I / II / Master)', '灵气培训（第一级 / 第二级 / 导师）'],
@@ -82,16 +82,16 @@ export default function ContactPage() {
             <dl className="contact-detail">
               <div className="contact-row">
                 <dt>{t('In-Person', '面对面')}</dt>
-                <dd>419 Dundas Street West First Floor Unit 3 (103, Toronto, ON M5T 1G6</dd>
+                <dd>{t('419 Dundas Street West, Second Floor, Unit 206, Toronto, ON M5T 1G6', '419 Dundas Street West, 2楼, Unit 206, Toronto, ON M5T 1G6')}</dd>
               </div>
               <div className="contact-row">
-                <dt>{t('Virtual Sessions', '线上疗程')}</dt>
+                <dt>{t('Distance Sessions', '远程疗程')}</dt>
                 <dd>{t('Available Worldwide', '全球皆可预约')}</dd>
               </div>
               <div className="contact-row">
                 <dt>{t('Email', '邮箱')}</dt>
                 <dd>
-                  <a href="mailto:hello@momengtstudio.com" style={{ color: 'var(--ink)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+                  <a href="mailto:momengtstudio@gmail.com" style={{ color: 'var(--ink)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
                     momengtstudio@gmail.com
                   </a>
                 </dd>
@@ -102,16 +102,20 @@ export default function ContactPage() {
                   {lang === 'zh' ? (
                     <>周一至周六<br />需提前预约</>
                   ) : (
-                    <>Friday— Saturday<br />By appointment</>
+                    <>Monday — Saturday<br />By appointment</>
                   )}
                 </dd>
+              </div>
+              <div className="contact-row">
+                <dt>{t('Instagram', '社交')}</dt>
+                <dd>@momengt_studio</dd>
               </div>
             </dl>
             <div style={{ marginTop: 32, borderTop: '1px solid var(--sand)', paddingTop: 24, maxWidth: 280 }}>
               <p style={{ fontFamily: "'Abel', sans-serif", fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 10 }}>
                 {t('When you write', '当你来信')}
               </p>
-              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(239,233,221,0.64)' }}>
+              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.64)' }}>
                 {t(
                   "I read every message myself and reply within 48 hours, usually sooner. There's no script and no pressure — just tell me where you are and what you're hoping for, and we'll find the right next step together.",
                   '每一封讯息我都亲自阅读，并在 48 小时内回复，通常更快。没有套路，也没有压力——只需告诉我你的状态和期望，我们会一起找到合适的下一步。'
@@ -148,7 +152,7 @@ export default function ContactPage() {
                 <label htmlFor="c-msg">{t('Your message', '你的留言')}</label>
                 <textarea id="c-msg" name="message" rows={4} required aria-required="true" />
               </div>
-              <button type="submit" className="btn btn-dark" style={{ marginTop: 8 }} disabled={submitting}>
+              <button type="submit" className="btn btn-terra" style={{ marginTop: 8 }} disabled={submitting}>
                 {sent ? t('Sent ✓', '已发送 ✓') : submitting ? t('Sending...', '发送中…') : t('Send message', '发送讯息')}
               </button>
             </form>

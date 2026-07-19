@@ -12,31 +12,29 @@ const SESSIONS = [
     name: { en: 'In-Person Reiki Session', zh: '面对面灵气疗程' },
     price: 'Toronto · 60 min · $137 CAD',
     desc: {
-      en: "Held in a calm, private setting in Toronto. You'll lie fully clothed — shoes off — on a treatment table while Meng works with your energy field using light touch or hands hovering just above the body.",
-      zh: '在多伦多一处宁静、私密的空间进行。你将着装躺下——脱去鞋子——躺在理疗床上，由 Meng 以轻触或悬于身体上方的双手，与你的能量场协作。',
+      en: "Held in a calm, private studio in downtown Toronto. You'll lie fully clothed — shoes off — on a treatment table while Meng works with your energy field, using light touch or hands hovering just above the body. Each session is shaped around what you're carrying that day: physical tension, emotional weight, or simply the need to be still.",
+      zh: '在多伦多市中心一间安静、私密的工作室进行。每一次疗程都围绕你当天的能量状态展开。',
     },
-    photo: '/assets/fxn-green-berries.JPG',
-    alt: 'Dense green foliage with bright red berries',
+    photo: '/assets/palo-santo.jpg',
+    alt: 'Palo santo sticks with clear quartz and an amber sphere on linen',
   },
   {
     num: '02',
-    rot: { en: 'Virtual', zh: '线上' },
-    name: { en: 'Virtual Reiki Session', zh: '线上灵气疗程' },
-    price: 'Worldwide · 60 min · $113 CAD',
+    rot: { en: 'Distance', zh: '远程' },
+    name: { en: 'Distance Reiki Session', zh: '远程灵气疗程' },
+    price: 'Worldwide · 60 min · $117 CAD',
     desc: {
-      en: 'Reiki is not bound by physical distance. Distance healing draws on the same principles as in-person work, and many clients find it just as effective. All you need is a quiet space.',
-      zh: '灵气不受物理距离的束缚。远距疗愈与面对面施作遵循相同的原理，许多来访者发现它同样有效。你只需要一处安静的空间。',
+      en: "Reiki tradition holds that energy is not bound by physical distance. A distance session is conducted with the same care and structure as in-person work: we connect by video, talk briefly about how you're arriving, and then you simply rest while I work. All you need is a quiet space, a comfortable position, and an open mind. Available worldwide, across all North American time zones and beyond.",
+      zh: '在灵气的框架下，能量不受物理距离的限制。我们通过视频连线，先简单聊聊你此刻的状态，然后你只需要安静地休息，我会在屏幕另一端工作。你需要准备的，只是一个不被打扰的角落、一个舒服的姿势，和一颗开放的心。',
     },
-    photo: '/assets/fxn-pink-wildflowers.JPG',
-    alt: 'Pink wildflowers scattered freely',
+    photo: '/assets/amethyst-pendulum.jpg',
+    alt: 'An amethyst pendulum hanging on a fine silver chain',
   },
 ];
 
 const BUNDLES = [
-  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 323 },
-  { en: '5 In-Person Sessions', zh: '5 次面对面疗程', price: 513 },
-  { en: '3 Virtual Sessions', zh: '3 次线上疗程', price: 271 },
-  { en: '5 Virtual Sessions', zh: '5 次线上疗程', price: 423 },
+  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 331 },
+  { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281 },
 ];
 
 const TRAINING = [
@@ -117,8 +115,8 @@ export default function ServicesPage() {
           <h2 style={{ ...H2_STYLE, fontSize: 28, margin: '8px 0 12px' }}>
             {t('Healing is a practice', '疗愈是一种持续的练习')}
           </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(239,233,221,0.62)', marginBottom: 24 }}>
-            {t('Bundles are for those ready to commit to their wellbeing over time.', '套餐适合愿意长期投入自我身心健康的你。')}
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(42,37,32,0.75)', marginBottom: 24 }}>
+            {t('A practice deepens with rhythm. Bundles are for those ready to make stillness a habit rather than an exception.', '把灵气疗愈融入你的生活。')}
           </p>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -149,7 +147,7 @@ export default function ServicesPage() {
           <h2 style={{ ...H2_STYLE, fontSize: 28, margin: '8px 0 12px' }}>
             {t('Train in Reiki yourself', '亲自学习灵气')}
           </h2>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'rgba(239,233,221,0.66)', marginBottom: 32, maxWidth: 560 }}>
+          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'rgba(42,37,32,0.66)', marginBottom: 32, maxWidth: 560 }}>
             {t(
               "Reiki isn't a gift reserved for a few — it's a practice anyone can be attuned to. I teach in small groups, in the traditional Usui lineage, so you leave able to offer Reiki to yourself, your family, and the people you love. Each level includes attunement, hands-on practice, and a printed manual.",
               '灵气并非少数人专属的天赋——任何人都可以被灵授。我以小班形式、依传统臼井体系教学，让你结业后能为自己、家人和所爱的人施作灵气。每个级别都包含灵授、实操练习与一本印制手册。'
@@ -162,7 +160,7 @@ export default function ServicesPage() {
                 <p className="card-type">{lang === 'zh' ? tr.level.zh : tr.level.en}</p>
                 <h3>{lang === 'zh' ? tr.name.zh : tr.name.en}</h3>
                 <p className="card-meta" style={{ marginBottom: 14 }}>{tr.meta}</p>
-                <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(239,233,221,0.62)', marginBottom: 20 }}>
+                <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.75)', marginBottom: 20 }}>
                   {lang === 'zh' ? tr.desc.zh : tr.desc.en}
                 </p>
                 <Link href="/contact" className="btn btn-sage" style={{ alignSelf: 'flex-start' }}>
@@ -174,7 +172,7 @@ export default function ServicesPage() {
               <p className="card-type" style={{ color: 'var(--muted)' }}>{t('Master · Shinpiden', '导师 · 神秘传')}</p>
               <h3>{t("The Teacher's Path", '教师之路')}</h3>
               <p className="card-meta" style={{ marginBottom: 14 }}>{t('Launching soon', '即将推出')}</p>
-              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(239,233,221,0.62)', marginBottom: 20 }}>
+              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.75)', marginBottom: 20 }}>
                 {t(
                   'The master symbol, the art of attunement, and the path to teaching. A commitment to Reiki as a way of life. This offering is in preparation — stay tuned.',
                   '导师符号、灵授的艺术，以及通往教学之路。将灵气作为一种生活方式的承诺。此课程正在筹备中，敬请期待。'
@@ -199,7 +197,7 @@ export default function ServicesPage() {
           <h2 style={{ ...H2_STYLE, fontSize: 24, letterSpacing: '-0.02em', margin: '8px 0 12px' }}>
             {t('Reiki shares & continuing practice', '灵气共修与持续练习')}
           </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.75, color: 'rgba(239,233,221,0.64)', marginBottom: 20 }}>
+          <p style={{ fontSize: 14, lineHeight: 1.75, color: 'rgba(42,37,32,0.64)', marginBottom: 20 }}>
             {t(
               'Once a month, students and practitioners gather to give and receive Reiki together — a relaxed evening of practice, questions, and community. Open to anyone who has completed Level I, with me or with another teacher. Pay what you can.',
               '每月一次，学员与疗愈师齐聚，彼此施作与接受灵气——一个轻松的夜晚，练习、提问、共聚。欢迎任何完成第一级的人参加（无论师承我或其他老师）。随心付费。'
@@ -207,6 +205,13 @@ export default function ServicesPage() {
           </p>
           <Link href="/contact" className="btn btn-sage">{t('Ask about the next share', '咨询下一次共修')}</Link>
         </div>
+
+        <p style={{ marginTop: 56, maxWidth: 640, fontSize: 12.5, lineHeight: 1.8, color: 'rgba(42,37,32,0.45)', borderTop: '1px solid rgba(42,37,32,0.1)', paddingTop: 24, textAlign: 'left' }}>
+          {t(
+            'Reiki is a complementary relaxation practice. It is not a medical treatment, and it is not a substitute for diagnosis or care from a physician or other regulated health professional. Meng does not diagnose conditions, prescribe, or advise any changes to medical treatment. If you have a health concern, please speak with your healthcare provider — and know that Reiki will be here to complement, never replace, that care.',
+            '灵气是一种辅助性的放松练习，不是医疗行为，不能替代医生或其他注册医疗专业人员的诊断与治疗。Meng 不做诊断、不开处方、也不建议任何医疗方案的更改。如有健康方面的疑虑，请咨询你的医疗服务提供者——灵气会在那份照护之侧陪伴你，而非取代它。'
+          )}
+        </p>
       </div>
     </div>
   );

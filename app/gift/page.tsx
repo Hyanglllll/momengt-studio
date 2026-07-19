@@ -20,11 +20,11 @@ type GiftCard = {
 const CARDS: GiftCard[] = [
   {
     key: 'virtual',
-    tag: ['Virtual Session', '线上疗程'],
+    tag: ['Distance Session', '远程疗程'],
     name: ['A Moment Away', '远方的片刻'],
-    type: ['Virtual Session', '线上疗程'],
-    price: 113,
-    desc: ['One 60-minute virtual Reiki session. Redeemable worldwide — they rest at home, the energy travels.', '一次 60 分钟的线上灵气疗程。全球可兑换——他们在家休息，能量自会抵达。'],
+    type: ['Distance Session', '远程疗程'],
+    price: 117,
+    desc: ['One 60-minute distance Reiki session. Redeemable worldwide — they rest at home, the energy travels.', '一次 60 分钟的远程灵气疗程。全球可兑换——他们在家休息，能量自会抵达。'],
     btn: 'btn-sage',
   },
   {
@@ -41,8 +41,8 @@ const CARDS: GiftCard[] = [
     tag: ['Bundle · Most gifted', '套餐 · 最受赠'],
     name: ['Three Moments', '三个片刻'],
     type: ['Bundle of 3 sessions', '3 次疗程套餐'],
-    price: 323,
-    desc: ['A series of three in-person sessions. Healing deepens with continuity. Virtual bundles also available.', '一系列三次面对面疗程。疗愈在持续中深化。亦提供线上套餐。'],
+    price: 331,
+    desc: ['A series of three in-person sessions. Healing deepens with continuity. Distance bundles also available.', '一系列三次面对面疗程。疗愈在持续中深化。亦提供远程套餐。'],
     btn: 'btn-terra',
     featured: true,
   },
@@ -169,8 +169,8 @@ export default function GiftPage() {
         <h1 className="page-h1" tabIndex={-1}>{t('Share the moment', '分享这个片刻')}</h1>
         <p className="page-lead" style={{ textAlign: 'left' }}>
           {t(
-            'Give someone you love the gift of stillness. Reiki gift certificates are delivered digitally and can be redeemed for any session type — a thoughtful offering for any occasion.',
-            '把静谧作为礼物，送给你所爱的人。灵气礼品卡以电子方式送达，可兑换任意疗程类型——适合任何场合的贴心心意。'
+            'Give someone an hour that belongs entirely to them. A Reiki session is a meaningful offering for anyone moving through stress, burnout, grief, or simply the weight of a busy life. Gift certificates are available for both in-person and distance sessions.',
+            '送Ta一小时完全属于Ta自己的时间。对于正在经历压力、倦怠、迷茫的人，灵气疗程是一份温柔的礼物。线下与远程疗程均可购买礼品卡。'
           )}
         </p>
 
@@ -179,9 +179,9 @@ export default function GiftPage() {
             <div
               className="gift-card"
               key={c.key}
-              style={c.featured ? { borderColor: 'rgba(164,209,106,0.3)' } : undefined}
+              style={c.featured ? { borderColor: 'rgba(127,160,85,0.3)' } : undefined}
             >
-              <div className="gift-stone" style={{ backgroundImage: "url('/assets/fqs-stone-texture.JPG')" }} aria-hidden="true" />
+              <div className="gift-stone" style={{ backgroundImage: "url('/assets/stones-circle.jpg')" }} aria-hidden="true" />
               <p className={`gift-tag${c.featured ? ' terra' : ''}`}>{lang === 'zh' ? c.tag[1] : c.tag[0]}</p>
               <p className="gift-name">{lang === 'zh' ? c.name[1] : c.name[0]}</p>
               <p className="gift-price">${c.price}</p>

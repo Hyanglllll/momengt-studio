@@ -51,23 +51,20 @@ export default function ReikiPage() {
           <h1 className="page-h1" tabIndex={-1}>
             {t('What is Reiki?', '什么是灵气？')}
           </h1>
-          <p className="page-lead" style={{ fontWeight: 400, color: 'rgba(239,233,221,0.78)', fontSize: 19 }}>
-            {t(
-              "Reiki is a gentle, non-invasive healing practice that works with your body's natural energy.",
-              '灵气是一种温和、非侵入式的疗法，与你身体自身的能量协作。'
-            )}
+          <p className="page-lead" style={{ fontWeight: 400, color: 'rgba(42,37,32,0.78)', fontSize: 19 }}>
+            {t('Reiki is a gentle, non-invasive energy practice.', '灵气是一种轻柔而非侵入式的能量疗法。')}
           </p>
         </div>
 
         <div className="photo" style={{ maxWidth: 680, width: '100%', aspectRatio: '680 / 420', marginBottom: 48 }}>
           <img
-            src="/assets/fxn-pink-wildflowers.JPG"
-            alt="Delicate pink wildflowers in full bloom, shot on film"
+            src="/assets/stones-circle.jpg"
+            alt="Seven healing stones arranged in a circle on soft linen"
             loading="lazy"
           />
         </div>
 
-        <div style={{ maxWidth: 640, textAlign: 'left', fontSize: 15, lineHeight: 1.82, color: 'rgba(239,233,221,0.72)' }}>
+        <div style={{ maxWidth: 640, textAlign: 'left', fontSize: 15, lineHeight: 1.82, color: 'rgba(42,37,32,0.72)' }}>
           <p>
             {lang === 'zh' ? (
               <>
@@ -84,8 +81,8 @@ export default function ReikiPage() {
           </p>
           <p style={{ marginTop: 16 }}>
             {t(
-              "A Reiki practitioner acts as a conduit for this universal energy, placing hands gently on or near the body to encourage energy to flow freely. When energy moves without obstruction, the body's own capacity for healing is restored.",
-              '灵气疗愈师如同这股宇宙能量的通道，将双手轻放于身体之上或附近，引导能量自由流动。当能量不受阻碍地流动时，身体自身的疗愈力便得以恢复。'
+              'In a session, the practitioner acts as a conduit for this universal energy, placing hands gently on or just above the body to invite energy to flow freely. When energy moves without obstruction, the body is given what modern life rarely allows it: the stillness in which rest and rebalancing become possible.',
+              '疗愈师作为宇宙能量的通道，将双手轻放或悬于顾客的身体上，引导能量流动。当能量不受阻碍地流动时，身体便获得了现代生活中难得的东西：让休息与重新平衡成为可能的静谧。'
             )}
           </p>
           <p style={{ marginTop: 16 }}>
@@ -96,7 +93,7 @@ export default function ReikiPage() {
           </p>
 
           <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', margin: '44px 0 16px', color: 'var(--ink)' }}>
-            {t('Reiki and Qi — Two traditions, one truth', '灵气与气——两种传统，同一真理')}
+            {t('Reiki and Qi — two traditions, one recognition', '灵气与「气」——两种传统，同一种照见')}
           </h2>
           <p>
             {lang === 'zh' ? (
@@ -105,7 +102,7 @@ export default function ReikiPage() {
               </>
             ) : (
               <>
-                If you've grown up with the concept of <em>Qi</em> (氣) — the vital life force at the
+                If you grew up with the concept of <em>Qi</em> (氣) — the vital life force at the
                 heart of Traditional Chinese Medicine, acupuncture, and Tai Chi — Reiki may feel
                 immediately familiar.
               </>
@@ -113,14 +110,14 @@ export default function ReikiPage() {
           </p>
           <p style={{ marginTop: 16 }}>
             {t(
-              'Both traditions recognize that the body is more than physical. It carries energy. And when that energy stagnates, becomes blocked, or falls out of balance, we feel it — as pain, fatigue, anxiety, or a quiet sense of disconnection.',
-              '两种传统都认识到，身体不只是物质。它承载着能量。当能量停滞、阻塞或失衡时，我们会感受到它——化作疼痛、疲惫、焦虑，或一种隐隐的疏离感。'
+              'Both traditions begin from the same observation: the body is more than physical. It carries energy. And when that energy stagnates or falls out of balance, we feel it — as tension, fatigue, restlessness, or a quiet sense of disconnection from ourselves.',
+              '两种传统始于同一个观察：身体不止是物质的，它承载着能量。当能量停滞、瘀堵或失衡，我们会感觉到紧绷，疲惫，心绪不宁，或是一种说不清的、与自己失去联结的感觉。'
             )}
           </p>
           <p style={{ marginTop: 16 }}>
             {t(
-              "Where Qi describes the energy that flows within the body and the natural world, Reiki works by channeling universal energy through a practitioner to support the body's own healing. Different traditions, pointing toward the same truth.",
-              '「气」描述的是流动于身体与自然之中的能量，而灵气则透过疗愈师引导宇宙能量，支持身体自身的疗愈。不同的传统，指向同一个真理。'
+              "Where Qi describes the energy flowing within the body and the natural world, Reiki works by channeling universal energy through a practitioner to support the body's own movement toward balance. Two traditions, pointing toward the same recognition.",
+              '「气」描述的是流动于身体与自然之中的能量；灵气则是疗愈师引导宇宙能量，来支持身体自己走向平衡的过程。'
             )}
           </p>
         </div>
@@ -129,7 +126,7 @@ export default function ReikiPage() {
           <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20, color: 'var(--ink)' }}>
             {t('What Reiki can support', '灵气能带来的支持')}
           </h2>
-          <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(239,233,221,0.72)', marginBottom: 24 }}>
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(42,37,32,0.72)', marginBottom: 24 }}>
             {t(
               "Reiki is a complementary practice — it works alongside medical care, never in place of it. It doesn't claim to cure. What it does, gently and consistently, is help the body settle into the state where its own healing can begin. Clients most often come to me carrying one of these:",
               '灵气是一种辅助性的练习——它与医疗照护并行，绝不取而代之。它不声称治愈疾病。它温和而持续地做的，是帮助身体回到那个能够开始自我疗愈的状态。来访者最常带着以下其中一种困扰前来：'
@@ -141,7 +138,7 @@ export default function ReikiPage() {
                 <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 4, color: 'var(--ink)' }}>
                   {lang === 'zh' ? item.zh[0] : item.en[0]}
                 </p>
-                <p style={{ fontSize: 13, color: 'rgba(239,233,221,0.6)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 13, color: 'rgba(42,37,32,0.6)', lineHeight: 1.6 }}>
                   {lang === 'zh' ? item.zh[1] : item.en[1]}
                 </p>
               </div>

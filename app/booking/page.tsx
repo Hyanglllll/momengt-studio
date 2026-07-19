@@ -6,14 +6,14 @@ import ScrollReveals from '@/components/ScrollReveals';
 import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
-const CALENDLY_URL = 'https://calendly.com/momengtstudio/1-hour-reiki-session';
+const BOOKING_URL = 'https://app.squareup.com/appointments/book/4aleo9t8pwmze0/LAVYHJMNM9TF8/start';
 
 type SessionType = 'in-person' | 'virtual';
-type PackageKey = 'single' | '3-pack' | '5-pack';
+type PackageKey = 'single' | '3-pack';
 
 const PRICING: Record<SessionType, Record<PackageKey, number>> = {
-  'in-person': { single: 137, '3-pack': 323, '5-pack': 513 },
-  virtual: { single: 113, '3-pack': 271, '5-pack': 423 },
+  'in-person': { single: 137, '3-pack': 331 },
+  virtual: { single: 117, '3-pack': 281 },
 };
 
 const TYPES: { key: SessionType; tag: [string, string]; name: [string, string]; meta: string; desc: [string, string]; aria: string }[] = [
@@ -27,11 +27,11 @@ const TYPES: { key: SessionType; tag: [string, string]; name: [string, string]; 
   },
   {
     key: 'virtual',
-    tag: ['Virtual · Worldwide', '线上 · 全球'],
-    name: ['Virtual Session', '线上疗程'],
-    meta: '60 min · $113 CAD',
+    tag: ['Distance · Worldwide', '远程 · 全球'],
+    name: ['Distance Session', '远程疗程'],
+    meta: '60 min · $117 CAD',
     desc: ['Reiki at a distance. Equally powerful. You rest at home; the energy meets you there.', '远距灵气，同样有力。你在家中休息，能量在那里与你相遇。'],
-    aria: 'Choose Virtual Session, worldwide, 60 minutes, $113 CAD',
+    aria: 'Choose Distance Session, worldwide, 60 minutes, $117 CAD',
   },
 ];
 
@@ -47,14 +47,6 @@ const PACKAGES: { key: PackageKey; tag: [string, string]; name: [string, string]
     tag: ['Bundle · Most Popular', '套餐 · 最受欢迎'],
     name: ['3-session bundle', '3 次疗程套餐'],
     desc: ['Healing deepens with continuity', '疗愈在持续中深化'],
-    badge: 'Save $88',
-  },
-  {
-    key: '5-pack',
-    tag: ['Bundle · Best Value', '套餐 · 超值之选'],
-    name: ['5-session bundle', '5 次疗程套餐'],
-    desc: ['Commit to your wellbeing over time', '长期投入你的身心健康'],
-    badge: 'Save $172',
   },
 ];
 
@@ -74,7 +66,7 @@ export default function BookingPage() {
   const [sessionType, setSessionType] = useState<SessionType | null>(null);
   const [pkg, setPkg] = useState<PackageKey | null>(null);
 
-  const step2Title = sessionType === 'in-person' ? t('In-Person Session', '面对面疗程') : t('Virtual Session', '线上疗程');
+  const step2Title = sessionType === 'in-person' ? t('In-Person Session', '面对面疗程') : t('Distance Session', '远程疗程');
 
   function selectType(key: SessionType) {
     setSessionType(key);
@@ -120,11 +112,11 @@ export default function BookingPage() {
                     }
                   }}
                 >
-                  <div className="booking-stone-bg" style={{ backgroundImage: "url('/assets/fqs-stone-texture.JPG')" }} aria-hidden="true" />
+                  <div className="booking-stone-bg" style={{ backgroundImage: "url('/assets/stones-circle.jpg')" }} aria-hidden="true" />
                   <p className="card-type">{lang === 'zh' ? ty.tag[1] : ty.tag[0]}</p>
                   <h3>{lang === 'zh' ? ty.name[1] : ty.name[0]}</h3>
                   <p className="card-meta">{ty.meta}</p>
-                  <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(239,233,221,0.58)', marginBottom: 24 }}>
+                  <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.58)', marginBottom: 24 }}>
                     {lang === 'zh' ? ty.desc[1] : ty.desc[0]}
                   </p>
                 </div>
@@ -134,7 +126,7 @@ export default function BookingPage() {
             <p style={{ marginTop: 32, fontFamily: "'Abel', sans-serif", fontSize: 12, letterSpacing: '0.07em', color: 'var(--muted)', textTransform: 'uppercase' }}>
               {t('New clients warmly welcomed · No prior experience needed', '热忱欢迎新来访者 · 无需任何经验')}
             </p>
-            <p style={{ marginTop: 16, fontSize: 14, color: 'rgba(239,233,221,0.6)' }}>
+            <p style={{ marginTop: 16, fontSize: 14, color: 'rgba(42,37,32,0.6)' }}>
               {t('Questions before booking? ', '预约前有疑问？')}
               <Link href="/contact" style={{ color: 'var(--terra)', textDecoration: 'underline', textUnderlineOffset: 2 }}>
                 {t('Contact Meng', '联系 Meng')}
@@ -178,9 +170,8 @@ export default function BookingPage() {
                     className={`bundle-option${selected ? ' selected' : ''}`}
                     aria-pressed={selected}
                     onClick={() => setPkg(p.key)}
-                    style={p.key === '5-pack' ? { marginBottom: 32 } : undefined}
+                    style={p.key === '3-pack' ? { marginBottom: 32 } : undefined}
                   >
-                    {p.badge && <span className="bundle-badge">{p.badge}</span>}
                     <span className="bundle-row">
                       <span>
                         <span className="bundle-tag" style={{ display: 'block' }}>{lang === 'zh' ? p.tag[1] : p.tag[0]}</span>
@@ -197,12 +188,12 @@ export default function BookingPage() {
                 type="button"
                 className="btn btn-terra"
                 disabled={!pkg}
-                onClick={() => window.open(CALENDLY_URL, '_blank', 'noopener')}
+                onClick={() => window.open(BOOKING_URL, '_blank', 'noopener')}
                 style={{ width: '100%', maxWidth: 400, margin: '0 auto', display: 'flex', padding: '16px 32px', fontSize: 13 }}
               >
                 {t('Continue to scheduling →', '继续预约时间 →')}
               </button>
-              <p style={{ marginTop: 16, fontSize: 13, color: 'rgba(239,233,221,0.65)', textAlign: 'center' }}>
+              <p style={{ marginTop: 16, fontSize: 13, color: 'rgba(42,37,32,0.65)', textAlign: 'center' }}>
                 {"You'll be directed to our secure scheduling platform"}
               </p>
             </div>

@@ -33,6 +33,28 @@ export default function Footer() {
         </span>
       </div>
       <p className="footer-tag">{t('Return to the moment.', '回到当下。')}</p>
+      <a
+        className="footer-xhs"
+        href="https://www.xiaohongshu.com/user/profile/6182d74c000000001000a6d8"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="rednote (小红书) — moMENGt Studio"
+      >
+        <svg viewBox="0 0 48 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="47" height="19" rx="4" stroke="currentColor" strokeWidth="1" />
+          <text
+            x="24"
+            y="13.5"
+            textAnchor="middle"
+            fontFamily="'PingFang SC','Microsoft YaHei',sans-serif"
+            fontSize="9"
+            fontWeight="600"
+            fill="currentColor"
+          >
+            {t('rednote', '小红书')}
+          </text>
+        </svg>
+      </a>
     </footer>
   );
 }

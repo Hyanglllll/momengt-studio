@@ -11,11 +11,11 @@ const SCENES = [
     side: { en: 'Philosophy', zh: '理念' },
     title: { en: 'What is Reiki', zh: '什么是灵气' },
     desc: {
-      en: "Reiki is a gentle, non-invasive Japanese healing practice that channels universal life energy through light touch. Rei — universal, Ki — life energy: the vital force that animates all living things, and that the body uses to restore its own balance.",
-      zh: '一种温和、非侵入式的日本疗法，与你身体自身的能量协作。',
+      en: 'Reiki is a gentle, non-invasive energy practice. Rei — universal, Ki — life energy: the vital force cultures around the world have long recognized as Qi, Prana, Ruach. You only need to arrive, and rest.',
+      zh: '灵气是一种轻柔而非侵入式的能量疗法。你只需要到来，然后休息。',
     },
     href: '/reiki',
-    photo: '/assets/fxn-pink-wildflowers.JPG',
+    photo: '/assets/scene-reiki.jpg',
     kind: 'photo',
   },
   {
@@ -23,11 +23,11 @@ const SCENES = [
     side: { en: 'The Founder', zh: '创始人' },
     title: { en: 'About', zh: '关于' },
     desc: {
-      en: 'From chronic migraines and corporate burnout to Usui Reiki Master — the story of Meng, her first encounter with Reiki between migraines, and the path that brought her to open MoMengt Studio.',
-      zh: '从企业倦怠到灵气导师——认识 Meng，以及把她带到这里的旅程。',
+      en: 'In 2020, migraines from grinding my teeth led me to Reiki. What I felt surprised me: the tension softened, and a quiet wave of calm moved through my body. This is the story of how MoMengt Studio began.',
+      zh: '2020年，一场偏头痛把我带向了灵气。紧绷的神经开始松动——这是 MoMengt Studio 开始的故事。',
     },
     href: '/about',
-    photo: '/assets/fxn-meadow-path.JPG',
+    photo: '/assets/white-orchid.jpg',
     kind: 'photo',
   },
   {
@@ -35,11 +35,11 @@ const SCENES = [
     side: { en: 'Offerings', zh: '服务项目' },
     title: { en: 'Services', zh: '服务' },
     desc: {
-      en: 'Two ways to experience Reiki — in person in Toronto, or virtually from anywhere in the world. Both 60 minutes. Choose a single session, or commit to your wellbeing with a multi-session bundle.',
-      zh: '面对面与线上疗程，以及套餐——皆为 60 分钟，皆能修复身心。',
+      en: "Two ways to experience Reiki — in a calm, private studio in downtown Toronto, or by distance from anywhere in the world. Both 60 minutes, each shaped around what you're carrying that day.",
+      zh: '两种方式体验灵气——多伦多市中心的安静工作室，或全球远程。皆为 60 分钟，围绕你当天的状态展开。',
     },
     href: '/services',
-    photo: '/assets/fxn-green-berries.JPG',
+    photo: '/assets/palo-santo.jpg',
     kind: 'photo',
   },
   {
@@ -47,8 +47,8 @@ const SCENES = [
     side: { en: 'Questions', zh: '问题' },
     title: { en: 'FAQ', zh: '常见问题' },
     desc: {
-      en: 'What a session feels like, whether you need to believe for it to work, how many sessions you might need, whether distance Reiki is effective, and how to prepare — answered honestly, with no pressure.',
-      zh: '为初次到访者最常提出的问题，给出真诚的解答。',
+      en: 'What a session feels like, why people come, whether you need to believe for it to work, and how to prepare — answered honestly, with no pressure.',
+      zh: '疗程是什么样的、大家为什么来、需不需要「相信」、如何准备——真诚作答，没有压力。',
     },
     href: '/faq',
     kind: 'dark',
@@ -58,11 +58,11 @@ const SCENES = [
     side: { en: 'Begin', zh: '开始' },
     title: { en: 'Booking', zh: '预约' },
     desc: {
-      en: 'Choose in-person or virtual, select a single session or a bundle, and reserve a moment. Sessions are offered Monday through Saturday, by appointment. New clients are warmly welcomed.',
-      zh: '选择你的疗程，预约一个属于你的片刻，周一至周六。',
+      en: 'Choose in-person or distance, a single session or a bundle, and reserve a moment. Sessions are offered Monday through Saturday, by appointment. New clients are warmly welcomed.',
+      zh: '选择线下或远程、单次或套组，预约一个属于你的片刻。周一至周六，需提前预约。',
     },
     href: '/booking',
-    photo: '/assets/fqs-stone-texture.JPG',
+    photo: '/assets/scene-booking.jpg',
     kind: 'photo',
   },
   {
@@ -70,11 +70,11 @@ const SCENES = [
     side: { en: 'A Gift', zh: '一份礼物' },
     title: { en: 'Gift Certificates', zh: '礼品卡' },
     desc: {
-      en: 'Give someone you love the gift of stillness. Digital gift certificates are available for both virtual and in-person sessions, redeemable for any session type — a thoughtful offering for any occasion.',
-      zh: '把静谧作为礼物，送给你所爱的人。',
+      en: 'Give someone an hour that belongs entirely to them — a meaningful offering for anyone moving through stress, burnout, grief, or simply the weight of a busy life.',
+      zh: '送Ta一小时完全属于Ta自己的时间——给正在经历压力、倦怠或迷茫的人一份温柔的礼物。',
     },
     href: '/gift',
-    photo: '/assets/fxn-pink-wildflowers.JPG',
+    photo: '/assets/scene-gift.jpg',
     kind: 'photo',
   },
   {
@@ -82,8 +82,8 @@ const SCENES = [
     side: { en: 'Reach Out', zh: '联系方式' },
     title: { en: 'Contact', zh: '联系' },
     desc: {
-      en: 'Curious about Reiki, unsure which session suits you, or simply wanting to say hello — there are no wrong questions. Send a note and Meng will respond within 48 hours.',
-      zh: '开始之前有疑问？联系我——我会在 48 小时内回复。',
+      en: 'Curious about Reiki, unsure which session suits you, or simply wanting to say hello — there are no wrong questions. I try to respond within 48 hours.',
+      zh: '对灵气好奇、不确定哪种疗程适合你，或只是想打个招呼——没有错误的问题。48小时内回复。',
     },
     href: '/contact',
     kind: 'dark',
@@ -102,10 +102,19 @@ export default function HomePage() {
 
       {/* Act I — hero, headline lower-left */}
       <div className="home-scene hero-scene">
+        <div className="hero-art" aria-hidden="true">
+          <div className="art-line" />
+          <div className="art-color c1" />
+          <div className="art-color c2" />
+          <div className="art-color c3" />
+          <div className="art-color c4" />
+          <div className="art-color c5" />
+          <div className="art-color c6" />
+        </div>
         <div className="home-hero">
           <p className="home-headline" style={{ fontFamily: "'Playfair Display'" }}>
             {lang === 'zh' ? (
-              <>此刻复此刻，<br />由内而愈。</>
+              <>此刻，由内而愈。</>
             ) : (
               <>Moment by moment,<br />heal from within.</>
             )}
@@ -136,11 +145,24 @@ export default function HomePage() {
             <h2 className="scene-title">{lang === 'zh' ? s.title.zh : s.title.en}</h2>
             <p className="scene-intro">{lang === 'zh' ? s.desc.zh : s.desc.en}</p>
             <Link href={s.href} className="proj-link">
-              {lang === 'zh' ? '查看' : 'Enter'}
+              {lang === 'zh' ? '查看' : 'Read more'}
             </Link>
           </div>
         </div>
       ))}
+
+      {/* Testimonials — quiet placeholder band */}
+      <div className="testimonial-band">
+        <span className="scene-num">{lang === 'zh' ? '客户评价' : 'Testimonials'}</span>
+        <p className="testimonial-note">
+          {lang === 'zh'
+            ? '客户的分享将在这里呈现。如果你曾体验过 Meng 的疗程，愿意分享你的感受，欢迎联系我。'
+            : "Client testimonials will appear here. If you've had a session with Meng and would like to share your experience, please get in touch."}
+        </p>
+        <Link href="/contact" className="proj-link">
+          {lang === 'zh' ? '分享你的感受' : 'Share your experience'}
+        </Link>
+      </div>
     </>
   );
 }
