@@ -7,8 +7,61 @@ import { useI18n } from '@/lib/i18n';
 
 const GIFT_ORDER_URL = 'https://app.squareup.com/gift/ML21MC7JEA85X/order';
 
+type GiftCard = {
+  key: string;
+  tag: [string, string];
+  name: [string, string];
+  price: number;
+  desc: [string, string];
+  featured?: boolean;
+};
+
+const CARDS: GiftCard[] = [
+  {
+    key: 'distance',
+    tag: ['Distance Session', '远程疗程'],
+    name: ['A Moment Away', '远方的片刻'],
+    price: 117,
+    desc: [
+      'One 60-minute distance Reiki session. Redeemable worldwide — they rest at home, the energy travels.',
+      '一次 60 分钟的远程灵气疗程。全球可兑换——他们在家休息，能量自会抵达。',
+    ],
+  },
+  {
+    key: 'in-person',
+    tag: ['In-Person Session', '面对面疗程'],
+    name: ['A Moment Present', '当下的片刻'],
+    price: 137,
+    desc: [
+      'One 60-minute in-person Reiki session at the Toronto studio. A gift of grounded, hands-on care.',
+      '一次 60 分钟、于多伦多工作室进行的面对面灵气疗程。一份踏实而亲手的关怀。',
+    ],
+  },
+  {
+    key: 'in-person-bundle',
+    tag: ['Bundle · Most gifted', '套餐 · 最受赠'],
+    name: ['Three Moments', '三个片刻'],
+    price: 331,
+    desc: [
+      'A series of three in-person sessions. Healing deepens with continuity.',
+      '一系列三次面对面疗程。疗愈在持续中深化。',
+    ],
+    featured: true,
+  },
+  {
+    key: 'distance-bundle',
+    tag: ['Bundle · Distance', '套餐 · 远程'],
+    name: ['Three Moments Away', '远方的三个片刻'],
+    price: 281,
+    desc: [
+      'A series of three distance sessions. Redeemable worldwide, wherever they call home.',
+      '一系列三次远程疗程。全球可兑换，无论他们身在何处。',
+    ],
+  },
+];
+
 export default function GiftPage() {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
 
   return (
     <div className="page-wrapper">
@@ -28,7 +81,23 @@ export default function GiftPage() {
           )}
         </p>
 
-        <div style={{ textAlign: 'left' }}>
+        <div className="gift-grid">
+          {CARDS.map((c) => (
+            <div
+              className="gift-card"
+              key={c.key}
+              style={c.featured ? { borderColor: 'rgba(127,160,85,0.3)' } : undefined}
+            >
+              <div className="gift-stone" style={{ backgroundImage: "url('/assets/stones-circle.jpg')" }} aria-hidden="true" />
+              <p className={`gift-tag${c.featured ? ' terra' : ''}`}>{lang === 'zh' ? c.tag[1] : c.tag[0]}</p>
+              <p className="gift-name">{lang === 'zh' ? c.name[1] : c.name[0]}</p>
+              <p className="gift-price">${c.price}</p>
+              <p className="gift-desc">{lang === 'zh' ? c.desc[1] : c.desc[0]}</p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'left', marginTop: 40 }}>
           <a
             href={GIFT_ORDER_URL}
             target="_blank"
