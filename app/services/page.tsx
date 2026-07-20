@@ -37,28 +37,6 @@ const BUNDLES = [
   { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281, url: 'https://square.link/u/q5RAomJP' },
 ];
 
-const TRAINING = [
-  {
-    level: { en: 'Level I · Shoden', zh: '第一级 · 初传' },
-    name: { en: 'The First Door', zh: '第一道门' },
-    meta: '1 day · $222 CAD',
-    desc: {
-      en: 'Your first attunement and the foundation of self-healing. Learn the history, the hand positions, and how to give Reiki to yourself daily. No experience needed.',
-      zh: '你的第一次灵授，以及自我疗愈的根基。学习历史、手位，以及如何每日为自己施作灵气。无需任何经验。',
-    },
-    cta: { en: 'Join the next group →', zh: '加入下一期 →' },
-  },
-  {
-    level: { en: 'Level II · Okuden', zh: '第二级 · 奥传' },
-    name: { en: 'The Symbols', zh: '符号' },
-    meta: '2 days · $333 CAD',
-    desc: {
-      en: 'The three traditional symbols, distance healing, and working with others. For those ready to offer Reiki as a practitioner. Level I required.',
-      zh: '三个传统符号、远距疗愈，以及为他人施作。适合准备好成为疗愈师的你。需先完成第一级。',
-    },
-    cta: { en: 'Join the next group →', zh: '加入下一期 →' },
-  },
-];
 
 const H2_STYLE = {
   fontFamily: "'Inter', sans-serif",
@@ -140,56 +118,6 @@ export default function ServicesPage() {
           <div style={{ marginTop: 28 }}>
             <Link href="/contact" className="btn btn-sage">{t('Ask about bundles', '咨询套餐')}</Link>
           </div>
-        </div>
-
-        <div style={{ marginTop: 80, maxWidth: 960, width: '100%', textAlign: 'left' }}>
-          <p className="eyebrow" style={{ textAlign: 'left' }}>{t('Learn the practice', '学习这门练习')}</p>
-          <h2 style={{ ...H2_STYLE, fontSize: 28, margin: '8px 0 12px' }}>
-            {t('Train in Reiki yourself', '亲自学习灵气')}
-          </h2>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'rgba(42,37,32,0.66)', marginBottom: 32, maxWidth: 560 }}>
-            {t(
-              "Reiki isn't a gift reserved for a few — it's a practice anyone can be attuned to. I teach in small groups, in the traditional Usui lineage, so you leave able to offer Reiki to yourself, your family, and the people you love. Each level includes attunement, hands-on practice, and a printed manual.",
-              '灵气并非少数人专属的天赋——任何人都可以被灵授。我以小班形式、依传统臼井体系教学，让你结业后能为自己、家人和所爱的人施作灵气。每个级别都包含灵授、实操练习与一本印制手册。'
-            )}
-          </p>
-
-          <div className="training-grid">
-            {TRAINING.map((tr) => (
-              <div className="booking-card" key={tr.level.en} style={{ cursor: 'default' }}>
-                <p className="card-type">{lang === 'zh' ? tr.level.zh : tr.level.en}</p>
-                <h3>{lang === 'zh' ? tr.name.zh : tr.name.en}</h3>
-                <p className="card-meta" style={{ marginBottom: 14 }}>{tr.meta}</p>
-                <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.75)', marginBottom: 20 }}>
-                  {lang === 'zh' ? tr.desc.zh : tr.desc.en}
-                </p>
-                <Link href="/contact" className="btn btn-sage" style={{ alignSelf: 'flex-start' }}>
-                  {lang === 'zh' ? tr.cta.zh : tr.cta.en}
-                </Link>
-              </div>
-            ))}
-            <div className="booking-card" style={{ cursor: 'default' }}>
-              <p className="card-type" style={{ color: 'var(--muted)' }}>{t('Master · Shinpiden', '导师 · 神秘传')}</p>
-              <h3>{t("The Teacher's Path", '教师之路')}</h3>
-              <p className="card-meta" style={{ marginBottom: 14 }}>{t('Launching soon', '即将推出')}</p>
-              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(42,37,32,0.75)', marginBottom: 20 }}>
-                {t(
-                  'The master symbol, the art of attunement, and the path to teaching. A commitment to Reiki as a way of life. This offering is in preparation — stay tuned.',
-                  '导师符号、灵授的艺术，以及通往教学之路。将灵气作为一种生活方式的承诺。此课程正在筹备中，敬请期待。'
-                )}
-              </p>
-              <span
-                className="btn btn-sage"
-                style={{ alignSelf: 'flex-start', opacity: 0.5, cursor: 'default', pointerEvents: 'none' }}
-                aria-disabled="true"
-              >
-                {t('Coming soon', '即将推出')}
-              </span>
-            </div>
-          </div>
-          <p style={{ marginTop: 24, fontFamily: "'Abel', sans-serif", fontSize: 12, letterSpacing: '0.06em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-            {t('Small groups · Toronto · Certificate & manual included', '小班教学 · 多伦多 · 含证书与手册')}
-          </p>
         </div>
 
         <div style={{ marginTop: 72, maxWidth: 700, width: '100%', textAlign: 'left', borderTop: '1px solid var(--sand)', paddingTop: 40 }}>
