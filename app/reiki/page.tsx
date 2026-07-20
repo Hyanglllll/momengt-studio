@@ -7,30 +7,12 @@ import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
 const SUPPORT = [
-  {
-    en: ['Stress & overwhelm', 'For the nervous system that has forgotten how to rest.'],
-    zh: ['压力与不堪重负', '为那个已忘记如何休息的神经系统。'],
-  },
-  {
-    en: ['Anxiety & racing thoughts', "A quieting of the mind that doesn't require effort."],
-    zh: ['焦虑与纷飞的思绪', '一种无需费力的心灵宁静。'],
-  },
-  {
-    en: ['Sleep & fatigue', 'Deeper rest, and more energy on the other side of it.'],
-    zh: ['睡眠与疲惫', '更深的休息，以及随之而来的更多能量。'],
-  },
-  {
-    en: ['Chronic tension & pain', 'The kind that lives in the jaw, the shoulders, the back.'],
-    zh: ['慢性紧绷与疼痛', '那种盘踞在下颌、肩膀与后背的疼痛。'],
-  },
-  {
-    en: ['Emotional processing', 'A safe, quiet space for what needs to move through.'],
-    zh: ['情绪的梳理', '为需要流经的情绪，提供一处安全而安静的空间。'],
-  },
-  {
-    en: ['Burnout & disconnection', 'Finding your way back to yourself, moment by moment.'],
-    zh: ['倦怠与疏离', '一刻接着一刻，找到回到自己的路。'],
-  },
+  { en: 'Stress & overwhelm', zh: '压力与不堪重负' },
+  { en: 'Anxiety & racing thoughts', zh: '焦虑与纷飞的思绪' },
+  { en: 'Sleep & fatigue', zh: '睡眠与疲惫' },
+  { en: 'Chronic tension & pain', zh: '慢性紧绷与疼痛' },
+  { en: 'Emotional processing', zh: '情绪的梳理' },
+  { en: 'Burnout & disconnection', zh: '倦怠与疏离' },
 ];
 
 export default function ReikiPage() {
@@ -134,12 +116,9 @@ export default function ReikiPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px 32px' }}>
             {SUPPORT.map((item) => (
-              <div key={item.en[0]} style={{ borderTop: '1px solid var(--sand)', paddingTop: 12 }}>
-                <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 4, color: 'var(--ink)' }}>
-                  {lang === 'zh' ? item.zh[0] : item.en[0]}
-                </p>
-                <p style={{ fontSize: 13, color: 'rgba(42,37,32,0.6)', lineHeight: 1.6 }}>
-                  {lang === 'zh' ? item.zh[1] : item.en[1]}
+              <div key={item.en} style={{ borderTop: '1px solid var(--sand)', paddingTop: 12 }}>
+                <p style={{ fontWeight: 600, fontSize: 15, color: 'var(--ink)' }}>
+                  {lang === 'zh' ? item.zh : item.en}
                 </p>
               </div>
             ))}
