@@ -156,7 +156,7 @@ export default function ServicesPage() {
 
           <div className="training-grid">
             {TRAINING.map((tr) => (
-              <div className="booking-card" key={tr.level.en} style={{ background: 'var(--sand)', cursor: 'default' }}>
+              <div className="booking-card" key={tr.level.en} style={{ cursor: 'default' }}>
                 <p className="card-type">{lang === 'zh' ? tr.level.zh : tr.level.en}</p>
                 <h3>{lang === 'zh' ? tr.name.zh : tr.name.en}</h3>
                 <p className="card-meta" style={{ marginBottom: 14 }}>{tr.meta}</p>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                 </Link>
               </div>
             ))}
-            <div className="booking-card" style={{ background: 'var(--sand)', cursor: 'default' }}>
+            <div className="booking-card" style={{ cursor: 'default' }}>
               <p className="card-type" style={{ color: 'var(--muted)' }}>{t('Master · Shinpiden', '导师 · 神秘传')}</p>
               <h3>{t("The Teacher's Path", '教师之路')}</h3>
               <p className="card-meta" style={{ marginBottom: 14 }}>{t('Launching soon', '即将推出')}</p>

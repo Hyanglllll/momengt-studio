@@ -576,24 +576,25 @@ footer {
 .training-grid .booking-card { height: 100%; }
 .training-grid .booking-card .btn { margin-top: auto; align-self: flex-start; }
 .booking-card {
-  background: var(--surface); border: 1px solid rgba(42,37,32,0.08);
-  border-radius: 20px; padding: 32px 28px 28px;
+  background: #fff; border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 18px; padding: 32px 28px 28px;
   display: flex; flex-direction: column; gap: 4px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative; overflow: hidden; cursor: pointer; text-align: left;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .booking-card::before {
-  content: ''; position: absolute; inset: 0; border-radius: 20px;
+  content: ''; position: absolute; inset: 0; border-radius: 18px;
   border: 1.5px solid transparent; transition: border-color 0.22s; pointer-events: none;
 }
-.booking-card:hover { transform: translateY(-5px); box-shadow: 0 14px 44px rgba(0,0,0,0.09); }
-.booking-card:hover::before { border-color: var(--sage-dk); }
+.booking-card:hover { transform: translateY(-5px); box-shadow: 0 14px 44px rgba(0,0,0,0.10); }
+.booking-card:hover::before { border-color: rgba(0,0,0,0.06); }
 .booking-card:active { transform: translateY(-2px); }
 .booking-card:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
 .booking-stone-bg {
   position: absolute; inset: 0; opacity: 0.07;
   background-size: cover; background-position: center;
-  pointer-events: none; border-radius: 20px; transition: opacity 0.5s ease;
+  pointer-events: none; border-radius: 18px; transition: opacity 0.5s ease;
 }
 .booking-card:hover .booking-stone-bg { opacity: 0.16; }
 .card-type, .card-meta, .booking-card h3, .booking-card p, .booking-card a, .booking-card span { position: relative; z-index: 1; }
@@ -604,13 +605,14 @@ footer {
 
 /* Bundle options (booking step 2) */
 .bundle-option {
-  background: var(--sand); border-radius: 16px; padding: 24px 28px; margin-bottom: 16px;
+  background: #fff; border-radius: 18px; padding: 24px 28px; margin-bottom: 16px;
   cursor: pointer; transition: all 0.3s; border: 2px solid transparent;
   position: relative; width: 100%; text-align: left; display: block;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
-.bundle-option:hover { border-color: rgba(127,160,85,0.3); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.bundle-option:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
 .bundle-option:active { transform: translateY(0); }
-.bundle-option.selected { border-color: var(--terra); background: rgba(127,160,85,0.04); }
+.bundle-option.selected { border-color: var(--terra); background: #fff; }
 .bundle-option:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
 .bundle-badge {
   position: absolute; top: -10px; right: 20px; background: var(--terra); color: white;
@@ -705,12 +707,13 @@ footer {
 }
 
 .gift-card {
-  border: 1px solid rgba(42,37,32,0.1); border-radius: 2px; padding: 36px 28px 30px;
+  border: 1px solid rgba(0,0,0,0.04); border-radius: 18px; padding: 36px 28px 30px;
   display: flex; flex-direction: column; gap: 0;
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
-  position: relative; overflow: hidden; background: var(--surface);
+  position: relative; overflow: hidden; background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
-.gift-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: rgba(127,160,85,0.4); }
+.gift-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.06); }
 .gift-card > * { position: relative; z-index: 1; }
 .gift-tag { font-family: var(--label); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; transition: color 0.3s; }
 .gift-card:hover .gift-tag { color: var(--terra); }
@@ -729,7 +732,7 @@ footer {
 /* ── GIFT CHECKOUT ── */
 .checkout-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: start; width: 100%; max-width: 1000px; text-align: left; }
 @media (max-width: 860px) { .checkout-grid { grid-template-columns: 1fr; gap: 40px; } }
-.checkout-summary { background: var(--surface); border: 1px solid rgba(42,37,32,0.1); border-radius: 3px; padding: 32px 30px; }
+.checkout-summary { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 18px; padding: 32px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
 .cs-eyebrow { font-family: var(--label); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--terra); margin-bottom: 22px; }
 .cs-line { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
 .cs-name { font-family: var(--display); font-size: 24px; color: var(--ink); }
