@@ -68,7 +68,7 @@ const SCENES = [
   {
     num: '06',
     side: { en: 'A Gift', zh: '一份礼物' },
-    title: { en: 'Gift Certificates', zh: '礼品卡' },
+    title: { en: 'Gift Card', zh: '礼品卡' },
     desc: {
       en: 'Give someone an hour that belongs entirely to them — a meaningful offering for anyone moving through stress, burnout, grief, or simply the weight of a busy life.',
       zh: '送Ta一小时完全属于Ta自己的时间——给正在经历压力、倦怠或迷茫的人一份温柔的礼物。',

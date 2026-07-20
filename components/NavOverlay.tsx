@@ -10,7 +10,7 @@ const LINKS = [
   { href: '/services', idx: '03', en: 'Services', zh: '服务', img: '/assets/palo-santo.jpg' },
   { href: '/faq', idx: '04', en: 'FAQ', zh: '常见问题', img: '/assets/stones-circle.jpg' },
   { href: '/booking', idx: '05', en: 'Booking', zh: '预约', img: '/assets/scene-booking.jpg' },
-  { href: '/gift', idx: '06', en: 'Gift Certificates', zh: '礼品卡', img: '/assets/scene-gift.jpg' },
+  { href: '/gift', idx: '06', en: 'Gift Card', zh: '礼品卡', img: '/assets/scene-gift.jpg' },
   { href: '/contact', idx: '07', en: 'Contact', zh: '联系', img: '/assets/amethyst-pendulum.jpg' },
 ];
 
