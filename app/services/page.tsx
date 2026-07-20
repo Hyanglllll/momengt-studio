@@ -33,8 +33,8 @@ const SESSIONS = [
 ];
 
 const BUNDLES = [
-  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 331 },
-  { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281 },
+  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 331, url: 'https://square.link/u/LGc4hl2p' },
+  { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281, url: 'https://square.link/u/q5RAomJP' },
 ];
 
 const TRAINING = [
@@ -128,9 +128,9 @@ export default function ServicesPage() {
                       ${b.price} CAD
                     </td>
                     <td style={{ textAlign: 'right', padding: '8px 0' }}>
-                      <Link href="/booking" className="bundle-book">
+                      <a href={b.url} target="_blank" rel="noopener noreferrer" className="bundle-book">
                         {t('Book →', '预约 →')}
-                      </Link>
+                      </a>
                     </td>
                   </tr>
                 ))}
@@ -156,7 +156,7 @@ export default function ServicesPage() {
 
           <div className="training-grid">
             {TRAINING.map((tr) => (
-              <div className="booking-card" key={tr.level.en} style={{ background: 'var(--sand)', cursor: 'default' }}>
+              <div className="booking-card" key={tr.level.en} style={{ cursor: 'default' }}>
                 <p className="card-type">{lang === 'zh' ? tr.level.zh : tr.level.en}</p>
                 <h3>{lang === 'zh' ? tr.name.zh : tr.name.en}</h3>
                 <p className="card-meta" style={{ marginBottom: 14 }}>{tr.meta}</p>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                 </Link>
               </div>
             ))}
-            <div className="booking-card" style={{ background: 'var(--sand)', cursor: 'default' }}>
+            <div className="booking-card" style={{ cursor: 'default' }}>
               <p className="card-type" style={{ color: 'var(--muted)' }}>{t('Master · Shinpiden', '导师 · 神秘传')}</p>
               <h3>{t("The Teacher's Path", '教师之路')}</h3>
               <p className="card-meta" style={{ marginBottom: 14 }}>{t('Launching soon', '即将推出')}</p>
