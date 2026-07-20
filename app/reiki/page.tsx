@@ -56,7 +56,7 @@ export default function ReikiPage() {
           </p>
         </div>
 
-        <div className="photo" style={{ maxWidth: 680, width: '100%', aspectRatio: '680 / 420', marginBottom: 48 }}>
+        <div className="photo" style={{ maxWidth: 680, width: '100%', marginBottom: 48 }}>
           <img
             src="/assets/stones-circle.jpg"
             alt="Seven healing stones arranged in a circle on soft linen"
