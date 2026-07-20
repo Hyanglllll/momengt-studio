@@ -10,7 +10,7 @@ const SUBJECT_OPTIONS: [string, string][] = [
   ['In-Person Session', '面对面疗程'],
   ['Distance Session', '远程疗程'],
   ['Session Bundles', '套餐疗程'],
-  ['Gift Certificates', '礼品卡'],
+  ['Gift Card', '礼品卡'],
   ['Reiki Training (Level I / II / Master)', '灵气培训（第一级 / 第二级 / 导师）'],
   ['Reiki Shares & Community', '灵气共修与社群'],
   ['What to Expect', '疗程须知'],

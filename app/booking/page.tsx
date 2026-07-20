@@ -7,6 +7,10 @@ import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
 const BOOKING_URL = 'https://book.squareup.com/appointments/4aleo9t8pwmze0/location/LAVYHJMNM9TF8/availability';
+const BUNDLE_URL: Record<'in-person' | 'virtual', string> = {
+  'in-person': 'https://square.link/u/LGc4hl2p',
+  virtual: 'https://square.link/u/q5RAomJP',
+};
 
 type SessionType = 'in-person' | 'virtual';
 type PackageKey = 'single' | '3-pack';
@@ -188,7 +192,13 @@ export default function BookingPage() {
                 type="button"
                 className="btn btn-terra"
                 disabled={!pkg}
-                onClick={() => window.open(BOOKING_URL, '_blank', 'noopener')}
+                onClick={() =>
+                  window.open(
+                    pkg === '3-pack' ? BUNDLE_URL[sessionType] : BOOKING_URL,
+                    '_blank',
+                    'noopener'
+                  )
+                }
                 style={{ width: '100%', maxWidth: 400, margin: '0 auto', display: 'flex', padding: '16px 32px', fontSize: 13 }}
               >
                 {t('Continue to scheduling →', '继续预约时间 →')}

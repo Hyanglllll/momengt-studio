@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const LABELS = ['Home', 'What is Reiki', 'About', 'Services', 'FAQ', 'Booking', 'Gift Certificates', 'Contact'];
+const LABELS = ['Home', 'What is Reiki', 'About', 'Services', 'FAQ', 'Booking', 'Gift Card', 'Contact'];
 
 export default function SceneDots() {
   const [active, setActive] = useState(0);
