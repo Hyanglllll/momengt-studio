@@ -345,9 +345,10 @@ footer {
 .home-scene.scene-dark { background: var(--surface); }
 .hero-scene { z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
 .home-scene .home-hero, .home-scene .scroll-cue, .home-scene .scene-inner { position: relative; z-index: 2; }
-/* Scroll cue pinned to the bottom of the hero screen (must re-assert absolute
-   over the composite rule above), clear of the 68px fixed footer */
-.hero-scene .scroll-cue { position: absolute; bottom: 92px; left: 50%; transform: translateX(-50%); }
+/* Scroll cue pinned 15px above the visible bottom edge of the first screen's
+   background — i.e. 15px above the 68px fixed footer. (Must re-assert absolute
+   over the composite rule above.) */
+.hero-scene .scroll-cue { position: absolute; bottom: calc(68px + 15px); left: 50%; transform: translateX(-50%); }
 
 /* Hero botanical art — sketch lines first, then each stroke blooms with color from its own origin */
 .hero-art {
@@ -404,7 +405,7 @@ footer {
 
 /* Scroll cue — sits at the bottom of the hero screen, clear of the 68px fixed footer */
 .scroll-cue {
-  position: absolute; bottom: 92px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: calc(68px + 15px); left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1;
   font-family: var(--label); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--muted); background: none; border: none; cursor: pointer;
