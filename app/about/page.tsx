@@ -53,7 +53,7 @@ export default function AboutPage() {
         </div>
 
         <div className="about-grid">
-          <div className="photo" style={{ aspectRatio: '3 / 4', maxHeight: 540 }}>
+          <div className="photo">
             <img
               src="/assets/white-orchid.jpg"
               alt="A white orchid in bloom against a quiet wall"

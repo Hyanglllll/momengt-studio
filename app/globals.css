@@ -185,7 +185,7 @@ html.lenis.lenis-stopped { overflow: hidden; }
 
 /* Menu hover image preview — floats behind the words */
 .nav-preview {
-  position: fixed; top: 50%; right: 7vw; width: 30vw; max-width: 420px; height: 52vh; max-height: 540px;
+  position: fixed; top: 50%; right: 7vw; height: 52vh; max-height: 540px; width: auto; aspect-ratio: 3 / 4; max-width: 30vw;
   transform: translateY(-50%) scale(0.96); border-radius: 3px; overflow: hidden;
   background-size: cover; background-position: center; opacity: 0; pointer-events: none;
   transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), background-image 0.3s ease;
@@ -253,7 +253,7 @@ footer {
 }
 .photo:hover { transform: scale(1.01); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
 .photo img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: auto; display: block;
   filter: saturate(0.95) brightness(1);
   transition: transform 0.6s ease, filter 0.4s ease;
 }
@@ -422,9 +422,12 @@ footer {
 
 /* Contained image panel on the right (Izanami PROJECTS layout) */
 .scene-panel {
-  position: relative; grid-column: 7 / span 5; grid-row: 1; align-self: center;
+  position: relative; grid-column: 7 / span 5; grid-row: 1; align-self: center; justify-self: center;
   transform: translateZ(0);
-  width: 100%; height: 72vh; max-height: 740px; overflow: hidden; z-index: 0;
+  /* photos are 3:4 — panel takes the same ratio (within the 72vh/740px height
+     budget) so the full image shows, scaled proportionally, never cropped */
+  width: min(100%, calc(min(72vh, 740px) * 0.75));
+  height: auto; aspect-ratio: 3 / 4; overflow: hidden; z-index: 0;
 }
 .scene-bg {
   position: absolute; inset: 0; z-index: 0;
@@ -541,9 +544,9 @@ footer {
 .proj-link:hover { color: var(--terra); }
 .proj-link:hover::before { width: 64px; }
 .proj-link:focus-visible { outline: 2px solid var(--terra); outline-offset: 4px; }
-.proj-img { overflow: hidden; min-height: 280px; align-self: stretch; }
+.proj-img { overflow: hidden; align-self: center; }
 .proj-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: auto; display: block;
   filter: saturate(0.95) brightness(1);
   transition: transform 0.9s cubic-bezier(0.22,1,0.36,1), filter 0.6s ease;
 }
@@ -732,8 +735,7 @@ footer {
      <img> keeps its own proportions at full width instead of being cropped */
   .photo { height: auto !important; max-height: none !important; aspect-ratio: auto !important; }
   .photo img { height: auto; }
-  .proj-img { min-height: 0; align-self: start; }
-  .proj-img img { height: auto; }
+  .proj-img { align-self: start; }
 }
 
 /* ── REDUCED MOTION ── */
