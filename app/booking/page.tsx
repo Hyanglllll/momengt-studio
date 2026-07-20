@@ -6,7 +6,10 @@ import ScrollReveals from '@/components/ScrollReveals';
 import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
-const BOOKING_URL = 'https://book.squareup.com/appointments/4aleo9t8pwmze0/location/LAVYHJMNM9TF8/availability';
+const SINGLE_URL: Record<'in-person' | 'virtual', string> = {
+  'in-person': 'https://book.squareup.com/appointments/4aleo9t8pwmze0/location/LAVYHJMNM9TF8/services/BQIG2QAXMDQ7OVA2ASVITX5J',
+  virtual: 'https://book.squareup.com/appointments/4aleo9t8pwmze0/location/LAVYHJMNM9TF8/services/JDKGID5UMZ7LPUACUQYBDBJY',
+};
 const BUNDLE_URL: Record<'in-person' | 'virtual', string> = {
   'in-person': 'https://square.link/u/LGc4hl2p',
   virtual: 'https://square.link/u/q5RAomJP',
@@ -194,7 +197,7 @@ export default function BookingPage() {
                 disabled={!pkg}
                 onClick={() =>
                   window.open(
-                    pkg === '3-pack' ? BUNDLE_URL[sessionType] : BOOKING_URL,
+                    pkg === '3-pack' ? BUNDLE_URL[sessionType] : SINGLE_URL[sessionType],
                     '_blank',
                     'noopener'
                   )

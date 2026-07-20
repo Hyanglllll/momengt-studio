@@ -33,8 +33,8 @@ const SESSIONS = [
 ];
 
 const BUNDLES = [
-  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 331 },
-  { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281 },
+  { en: '3 In-Person Sessions', zh: '3 次面对面疗程', price: 331, url: 'https://square.link/u/LGc4hl2p' },
+  { en: '3 Distance Sessions', zh: '3 次远程疗程', price: 281, url: 'https://square.link/u/q5RAomJP' },
 ];
 
 const TRAINING = [
@@ -128,9 +128,9 @@ export default function ServicesPage() {
                       ${b.price} CAD
                     </td>
                     <td style={{ textAlign: 'right', padding: '8px 0' }}>
-                      <Link href="/booking" className="bundle-book">
+                      <a href={b.url} target="_blank" rel="noopener noreferrer" className="bundle-book">
                         {t('Book →', '预约 →')}
-                      </Link>
+                      </a>
                     </td>
                   </tr>
                 ))}
