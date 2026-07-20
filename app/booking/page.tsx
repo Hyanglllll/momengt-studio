@@ -6,7 +6,7 @@ import ScrollReveals from '@/components/ScrollReveals';
 import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
-const BOOKING_URL = 'https://app.squareup.com/appointments/book/4aleo9t8pwmze0/LAVYHJMNM9TF8/start';
+const BOOKING_URL = 'https://book.squareup.com/appointments/4aleo9t8pwmze0/location/LAVYHJMNM9TF8/availability';
 
 type SessionType = 'in-person' | 'virtual';
 type PackageKey = 'single' | '3-pack';
