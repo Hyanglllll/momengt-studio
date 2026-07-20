@@ -21,17 +21,17 @@ const TYPES: { key: SessionType; tag: [string, string]; name: [string, string]; 
     key: 'in-person',
     tag: ['In-Person · Toronto', '面对面 · 多伦多'],
     name: ['In-Person Session', '面对面疗程'],
-    meta: '60 min · $137 CAD',
+    meta: '$137 CAD',
     desc: ['Hands-on Reiki at the Toronto studio. You arrive, you rest, you leave restored.', '在多伦多工作室进行的亲身灵气疗程。你到来，你休息，你带着焕然一新离开。'],
-    aria: 'Choose In-Person Session, Toronto, 60 minutes, $137 CAD',
+    aria: 'Choose In-Person Session, Toronto, $137 CAD',
   },
   {
     key: 'virtual',
     tag: ['Distance · Worldwide', '远程 · 全球'],
     name: ['Distance Session', '远程疗程'],
-    meta: '60 min · $117 CAD',
+    meta: '$117 CAD',
     desc: ['Reiki at a distance. Equally powerful. You rest at home; the energy meets you there.', '远距灵气，同样有力。你在家中休息，能量在那里与你相遇。'],
-    aria: 'Choose Distance Session, worldwide, 60 minutes, $117 CAD',
+    aria: 'Choose Distance Session, worldwide, $117 CAD',
   },
 ];
 
@@ -39,7 +39,7 @@ const PACKAGES: { key: PackageKey; tag: [string, string]; name: [string, string]
   {
     key: 'single',
     tag: ['Single Session', '单次疗程'],
-    name: ['One session', '一次疗程'],
+    name: ['1 hour', '1 小时'],
     desc: ['Try Reiki, no commitment needed', '尝试灵气，无需任何承诺'],
   },
   {
