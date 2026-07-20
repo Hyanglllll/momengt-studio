@@ -38,6 +38,16 @@ const CARDS: GiftCard[] = [
     ],
   },
   {
+    key: 'distance-bundle',
+    tag: ['Bundle · Distance', '套餐 · 远程'],
+    name: ['Three Moments Away', '远方的三个片刻'],
+    price: 281,
+    desc: [
+      'A series of three distance sessions. Redeemable worldwide, wherever they call home.',
+      '一系列三次远程疗程。全球可兑换，无论他们身在何处。',
+    ],
+  },
+  {
     key: 'in-person-bundle',
     tag: ['Bundle · Most gifted', '套餐 · 最受赠'],
     name: ['Three Moments', '三个片刻'],
@@ -47,16 +57,6 @@ const CARDS: GiftCard[] = [
       '一系列三次面对面疗程。疗愈在持续中深化。',
     ],
     featured: true,
-  },
-  {
-    key: 'distance-bundle',
-    tag: ['Bundle · Distance', '套餐 · 远程'],
-    name: ['Three Moments Away', '远方的三个片刻'],
-    price: 281,
-    desc: [
-      'A series of three distance sessions. Redeemable worldwide, wherever they call home.',
-      '一系列三次远程疗程。全球可兑换，无论他们身在何处。',
-    ],
   },
 ];
 
