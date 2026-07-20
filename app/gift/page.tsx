@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import ScrollReveals from '@/components/ScrollReveals';
+import GiftCarousel from '@/components/GiftCarousel';
 import SectionLabel from '@/components/SectionLabel';
 import { useI18n } from '@/lib/i18n';
 
@@ -65,9 +65,9 @@ export default function GiftPage() {
 
   return (
     <div className="page-wrapper">
-      <ScrollReveals />
       <SectionLabel index="07" name={['A Gift', '一份礼物']} />
-      <div className="inner-wrap">
+
+      <div className="gift-head">
         <Link href="/" className="back-btn">
           {t('Back', '返回')}
         </Link>
@@ -80,36 +80,36 @@ export default function GiftPage() {
             '送Ta一小时完全属于Ta自己的时间。对于正在经历压力、倦怠、迷茫的人，灵气疗程是一份温柔的礼物。'
           )}
         </p>
+      </div>
 
-        <div className="gift-grid">
-          {CARDS.map((c) => (
-            <div
-              className="gift-card"
-              key={c.key}
-              style={c.featured ? { borderColor: 'rgba(127,160,85,0.3)' } : undefined}
-            >
-              <div className="gift-stone" style={{ backgroundImage: "url('/assets/stones-circle.jpg')" }} aria-hidden="true" />
-              <p className={`gift-tag${c.featured ? ' terra' : ''}`}>{lang === 'zh' ? c.tag[1] : c.tag[0]}</p>
-              <p className="gift-name">{lang === 'zh' ? c.name[1] : c.name[0]}</p>
-              <p className="gift-price">${c.price}</p>
-              <p className="gift-desc">{lang === 'zh' ? c.desc[1] : c.desc[0]}</p>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ textAlign: 'left', marginTop: 40 }}>
-          <a
-            href={GIFT_ORDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-terra"
+      <GiftCarousel>
+        {CARDS.map((c) => (
+          <div
+            className="gift-card"
+            key={c.key}
+            style={c.featured ? { borderColor: 'rgba(127,160,85,0.3)' } : undefined}
           >
-            {t('Purchase a gift card →', '购买礼品卡 →')}
-          </a>
-          <p style={{ marginTop: 16, fontSize: 13, color: 'rgba(42,37,32,0.65)' }}>
-            {t("You'll be directed to our secure ordering platform", '你将被引导至我们的安全下单平台')}
-          </p>
-        </div>
+            <div className="gift-stone" style={{ backgroundImage: "url('/assets/stones-circle.jpg')" }} aria-hidden="true" />
+            <p className={`gift-tag${c.featured ? ' terra' : ''}`}>{lang === 'zh' ? c.tag[1] : c.tag[0]}</p>
+            <p className="gift-name">{lang === 'zh' ? c.name[1] : c.name[0]}</p>
+            <p className="gift-price">${c.price}</p>
+            <p className="gift-desc">{lang === 'zh' ? c.desc[1] : c.desc[0]}</p>
+          </div>
+        ))}
+      </GiftCarousel>
+
+      <div className="gift-foot">
+        <a
+          href={GIFT_ORDER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-terra"
+        >
+          {t('Purchase a gift card →', '购买礼品卡 →')}
+        </a>
+        <p style={{ marginTop: 16, fontSize: 13, color: 'rgba(42,37,32,0.65)' }}>
+          {t("You'll be directed to our secure ordering platform", '你将被引导至我们的安全下单平台')}
+        </p>
       </div>
     </div>
   );

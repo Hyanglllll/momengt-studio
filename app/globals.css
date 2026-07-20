@@ -683,9 +683,27 @@ footer {
 .form-field textarea { min-height: 88px; }
 .form-field.error input, .form-field.error textarea, .form-field.error select { border-color: #d44; }
 
-/* ── GIFT CERTS ── */
-.gift-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 640px; width: 100%; text-align: left; }
-@media (max-width: 640px) { .gift-grid { grid-template-columns: 1fr; } }
+/* ── GIFT CARDS + HORIZONTAL CAROUSEL ── */
+/* Heading / CTA blocks sit in a normal padded column; the carousel is full-bleed */
+.gift-head { max-width: 1200px; margin: 0 auto; padding: 108px clamp(48px, 6vw, 96px) 8px; }
+.gift-foot { max-width: 1200px; margin: 0 auto; padding: 8px clamp(48px, 6vw, 96px) 160px; }
+@media (max-width: 860px) {
+  .gift-head { padding: 96px 32px 8px; }
+  .gift-foot { padding: 8px 32px 140px; }
+}
+
+/* Base (mobile / reduced-motion): native horizontal swipe */
+.gift-hscroll { position: relative; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+.gift-hscroll::-webkit-scrollbar { height: 0; }
+.gift-htrack { display: flex; gap: 24px; width: max-content; padding: 32px clamp(24px, 6vw, 96px); will-change: transform; }
+.gift-htrack .gift-card { flex: 0 0 78vw; width: 78vw; max-width: 320px; scroll-snap-align: start; }
+
+/* Desktop with motion: pinned; vertical scroll drives the track sideways (JS) */
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  .gift-hscroll { overflow: hidden; min-height: 100vh; display: flex; align-items: center; scroll-snap-type: none; }
+  .gift-htrack .gift-card { flex-basis: 340px; width: 340px; max-width: none; }
+}
+
 .gift-card {
   border: 1px solid rgba(42,37,32,0.1); border-radius: 2px; padding: 36px 28px 30px;
   display: flex; flex-direction: column; gap: 0;
