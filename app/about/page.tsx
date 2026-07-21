@@ -55,8 +55,8 @@ export default function AboutPage() {
         <div className="about-grid">
           <div className="photo">
             <img
-              src="/assets/white-orchid.jpg"
-              alt="A white orchid in bloom against a quiet wall"
+              src="/assets/meng-portrait.jpg"
+              alt="Meng, founder of MoMengt Studio, smiling by a sunlit window"
               loading="lazy"
             />
           </div>
