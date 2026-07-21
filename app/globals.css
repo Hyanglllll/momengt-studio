@@ -24,7 +24,7 @@ html.lenis.lenis-stopped { overflow: hidden; }
 
 /* ── DESIGN TOKENS ── */
 :root {
-  --cream:   #f7f3ea;
+  --cream:   #fbf9f3;
   --terra:   #55763a;
   --sage:    #7fa055;
   --sage-dk: #54702f;
@@ -124,7 +124,7 @@ html.lenis.lenis-stopped { overflow: hidden; }
 .top-right { display: flex; align-items: center; gap: 22px; }
 .top-book {
   font-family: var(--label); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: #f7f3ea; text-decoration: none; border: 1px solid var(--terra); background: var(--terra);
+  color: #fbf9f3; text-decoration: none; border: 1px solid var(--terra); background: var(--terra);
   padding: 9px 18px; border-radius: 2px; white-space: nowrap; display: inline-block;
   transition: opacity 0.25s ease;
 }
@@ -155,7 +155,7 @@ html.lenis.lenis-stopped { overflow: hidden; }
 /* ── NAV OVERLAY (dark editorial) ── */
 .nav-overlay {
   position: fixed; inset: 0; z-index: 150;
-  background: rgba(247,243,234,0.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: rgba(251,249,243,0.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start;
   padding: 200px 88px 88px; overflow-y: auto;
   opacity: 0; pointer-events: none;
@@ -208,7 +208,7 @@ html.lenis.lenis-stopped { overflow: hidden; }
 /* ── FOOTER (fixed editorial: copy · clock · tag) ── */
 footer {
   position: fixed; bottom: 0; left: 0; right: 0; height: 68px;
-  background: rgba(247,243,234,0.9);
+  background: rgba(251,249,243,0.9);
   border-top: 1px solid rgba(42,37,32,0.08);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px; z-index: 200; font-family: var(--label);
@@ -237,12 +237,12 @@ footer {
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 .btn:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
-.btn:hover { background: var(--terra); color: #f7f3ea; transform: translateY(-1px); }
+.btn:hover { background: var(--terra); color: #fbf9f3; transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 .btn-sage { border-color: var(--sage); color: var(--sage-dk); }
-.btn-sage:hover { background: var(--sage); color: #f7f3ea; }
+.btn-sage:hover { background: var(--sage); color: #fbf9f3; }
 .btn-dark { border-color: var(--ink); color: var(--ink); }
-.btn-dark:hover { background: var(--ink); color: #f7f3ea; }
+.btn-dark:hover { background: var(--ink); color: #fbf9f3; }
 .btn:disabled { opacity: 0.4; pointer-events: none; }
 @media (max-width: 640px) { .btn { font-size: 11px; padding: 12px 22px; } }
 
@@ -319,14 +319,14 @@ footer {
 
 /* ── HOME ── */
 .home-intro {
-  position: fixed; inset: 0; z-index: 240; background: #f7f3ea;
+  position: fixed; inset: 0; z-index: 240; background: #fbf9f3;
   opacity: 1; transition: opacity 1.4s ease; pointer-events: none;
 }
 .home-intro.gone { opacity: 0; }
 
 .home-atmos {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(247,243,234,0.7) 0%, rgba(247,243,234,0.52) 42%, rgba(247,243,234,0.9) 100%);
+  background: linear-gradient(180deg, rgba(251,249,243,0.7) 0%, rgba(251,249,243,0.52) 42%, rgba(251,249,243,0.9) 100%);
   animation: atmosDrift 28s ease-in-out infinite alternate;
   opacity: 0; transition: opacity 1.6s ease;
 }
@@ -566,7 +566,7 @@ footer {
   color: var(--terra); text-decoration: none; border: 1px solid var(--terra);
   padding: 6px 14px; border-radius: 6px; transition: all 0.22s; display: inline-block;
 }
-.bundle-book:hover { background: var(--terra); color: #f7f3ea; }
+.bundle-book:hover { background: var(--terra); color: #fbf9f3; }
 
 /* ── BOOKING / TRAINING CARDS ── */
 .booking-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 700px; text-align: left; }
